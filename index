@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Redefining Diplomacy for the Next Generation. Youth-led geopolitical analysis and insights.">
+<meta name="theme-color" content="#0d7377">
+
+<meta property="og:title" content="Global Voice Insights — Redefining Diplomacy">
+<meta property="og:description" content="Decoding complex geopolitical shifts into clear, actionable insights.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://globalvoiceinsights.com/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Global Voice Insights — Redefining Diplomacy">
+<meta name="twitter:description" content="Decoding complex geopolitical shifts into clear, actionable insights.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<title>Global Voice Insights — Redefining Diplomacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<noscript><style>.article-card.filter-hidden { display: block !important; } .hamburger { display: none !important; } .nav-links { transform: translateX(0) !important; }</style></noscript>
+<style>
+  :root {
+    --teal: #0d7377;
+    --teal-light: #14a085;
+    --teal-pale: #e8f5f4;
+    --teal-mid: #1a9e96;
+    --green-deep: #0b4f4e;
+    --white: #fafafa;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e4;
+    --gray-300: #b0b0a8;
+    --gray-500: #6b6b62;
+    --gray-700: #3d3d38;
+    --gray-900: #1a1a17;
+    --accent: #c9a84c;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { 
+    scroll-behavior: smooth; 
+    /* Предотвращает перекрытие контента фиксированной шапкой при клике на якорные ссылки */
+    scroll-padding-top: 90px; 
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--gray-900);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  nav.scrolled { 
+    box-shadow: 0 4px 30px rgba(13,115,119,0.08); 
+    border-bottom: 1px solid var(--gray-100);
+    padding: 1rem 4rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+    color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
+    position: relative;
+    z-index: 101; /* Чтобы лого было поверх мобильного меню */
+  }
+  .nav-logo span {
+    display: inline-flex; width: 28px; height: 28px;
+    background: var(--teal); border-radius: 6px;
+    color: white; font-size: 0.75rem; font-family: var(--font-mono);
+    align-items: center; justify-content: center; font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+  .nav-logo:hover span { transform: scale(1.05) rotate(-5deg); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--gray-700);
+    text-decoration: none; transition: color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -4px; left: 0; background-color: var(--teal);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal); color: white !important;
+    padding: 0.6rem 1.6rem; border-radius: 4px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(13,115,119,0.2);
+  }
+  .nav-cta:hover { 
+    background: var(--green-deep) !important; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13,115,119,0.3);
+  }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 6px; cursor: pointer;
+    padding: 4px; z-index: 101; /* Поверх мобильного меню */
+  }
+  .hamburger span {
+    display: block; width: 28px; height: 2px; background: var(--gray-700);
+    transition: all 0.3s ease; border-radius: 2px;
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--teal); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--teal); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 70% 40%, rgba(13,115,119,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(20,160,133,0.06) 0%, transparent 60%);
+  }
+
+  .hero-grid-overlay {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--gray-100) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 4rem 4rem 6rem;
+    position: relative; z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: ''; display: inline-block; width: 30px; height: 2px;
+    background: var(--teal);
+  }
+
+  .hero-headline {
+    font-family: var(--font-display); font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+    font-weight: 900; line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: 1.8rem;
+  }
+  .hero-headline em {
+    font-style: italic; color: var(--teal);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem; line-height: 1.7; color: var(--gray-500);
+    font-weight: 400; max-width: 500px; margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal); color: white;
+    padding: 1rem 2.2rem; border: none; border-radius: 4px;
+    font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block; letter-spacing: 0.02em;
+    box-shadow: 0 4px 15px rgba(13,115,119,0.25);
+  }
+  .btn-primary:hover { 
+    background: var(--green-deep); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(13,115,119,0.35);
+  }
+
+  .btn-outline {
+    background: transparent; color: var(--teal);
+    padding: 1rem 2.2rem; border: 2px solid var(--teal); border-radius: 4px;
+    font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block; letter-spacing: 0.02em;
+  }
+  .btn-outline:hover { 
+    background: var(--teal); color: white; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(13,115,119,0.2);
+  }
+
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2; padding: 4rem;
+  }
+
+  .hero-visual {
+    width: 100%; max-width: 440px;
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    box-shadow: 0 30px 90px rgba(13,115,119,0.15), 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .hero-visual-header {
+    background: var(--teal); padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-visual-header-dot {
+    width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.4);
+  }
+  .hero-visual-header span {
+    font-family: var(--font-mono); font-size: 0.75rem; color: rgba(255,255,255,0.9);
+    letter-spacing: 0.1em; margin-left: auto;
+  }
+
+  .brief-card { padding: 1.5rem; border-bottom: 1px solid var(--gray-100); transition: background 0.3s ease; }
+  .brief-card:hover { background: var(--gray-50); cursor: pointer; }
+  .brief-card:last-child { border-bottom: none; }
+  .brief-region {
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .brief-title {
+    font-family: var(--font-display); font-size: 1rem; font-weight: 700;
+    color: var(--gray-900); line-height: 1.4; margin-bottom: 0.6rem;
+  }
+  .brief-meta {
+    font-size: 0.75rem; color: var(--gray-500); display: flex; gap: 1rem; font-weight: 500;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 8rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .section-eyebrow {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-eyebrow::before {
+    content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal);
+  }
+
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.15;
+    color: var(--gray-900); margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+
+  .section-lead {
+    font-size: 1.1rem; line-height: 1.75; color: var(--gray-500);
+    font-weight: 400; max-width: 600px;
+  }
+
+  /* ─── ABOUT / WHY GVI ─── */
+  .about { background: var(--gray-50); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: start; margin-top: 4rem;
+  }
+
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.8; color: var(--gray-700);
+    margin-bottom: 1.5rem; font-weight: 400;
+  }
+  .about-text strong { color: var(--teal); font-weight: 600; }
+
+  .values-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .value-card {
+    background: white; border: 1px solid var(--gray-100);
+    padding: 1.8rem; border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  .value-card:hover {
+    border-color: var(--teal); box-shadow: 0 10px 30px rgba(13,115,119,0.1);
+    transform: translateY(-5px);
+  }
+  .value-icon {
+    font-size: 1.5rem; margin-bottom: 0.8rem; display: block;
+  }
+  .value-name {
+    font-weight: 700; font-size: 1rem; color: var(--gray-900);
+    margin-bottom: 0.5rem;
+  }
+  .value-desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+  .pillars {
+    margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--gray-100);
+  }
+  .pillars-label {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600;
+  }
+  .pillars-list {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .pillar-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1.2rem 1.5rem; background: white;
+    border: 1px solid var(--gray-100); border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  .pillar-item:hover { border-color: var(--teal); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transform: translateX(5px); }
+  .pillar-num {
+    font-family: var(--font-mono); font-size: 0.9rem; color: var(--teal);
+    font-weight: 600; min-width: 24px; padding-top: 2px;
+  }
+  .pillar-name { font-weight: 700; font-size: 1rem; color: var(--gray-900); }
+  .pillar-desc { font-size: 0.85rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.5; }
+
+  /* ─── CONTENT HUB ─── */
+  .hub { background: white; }
+
+  .hub-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
+  }
+
+  .hub-filter {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 0.6rem 1.2rem; border: 1px solid var(--gray-100);
+    border-radius: 4px; background: white; color: var(--gray-500);
+    cursor: pointer; transition: all 0.3s ease;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--teal); color: white; border-color: var(--teal);
+    box-shadow: 0 4px 12px rgba(13,115,119,0.2);
+  }
+
+  .articles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+
+  a.article-card {
+    text-decoration: none; color: inherit; display: flex; flex-direction: column;
+    border: 1px solid var(--gray-100); padding: 2rem;
+    border-radius: 8px; transition: all 0.3s ease;
+    cursor: pointer; position: relative; overflow: hidden; background: white;
+  }
+  a.article-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--teal);
+    transform: scaleY(0); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-origin: bottom;
+  }
+  a.article-card:hover::before { transform: scaleY(1); }
+  a.article-card:hover {
+    box-shadow: 0 12px 40px rgba(13,115,119,0.1);
+    transform: translateY(-4px); border-color: transparent;
+  }
+
+  .article-region {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .article-title {
+    font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+    color: var(--gray-900); line-height: 1.4; margin-bottom: 1rem;
+  }
+  .article-excerpt {
+    font-size: 0.9rem; color: var(--gray-500); line-height: 1.6;
+    margin-bottom: 1.5rem; font-weight: 400; flex-grow: 1;
+  }
+  .article-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1rem; border-top: 1px solid var(--gray-50);
+  }
+  .article-date { font-size: 0.75rem; color: var(--gray-500); font-family: var(--font-mono); font-weight: 500; }
+  .article-read {
+    font-size: 0.75rem; font-weight: 700; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 0.08em; transition: transform 0.2s;
+  }
+  a.article-card:hover .article-read { transform: translateX(4px); }
+
+  /* Featured article */
+  a.article-card.featured {
+    grid-column: span 2; background: var(--teal);
+    border-color: var(--teal); padding: 3rem;
+  }
+  a.article-card.featured::before { background: var(--accent); width: 6px; }
+  a.article-card.featured .article-region { color: rgba(255,255,255,0.7); }
+  a.article-card.featured .article-title { color: white; font-size: 1.6rem; }
+  a.article-card.featured .article-excerpt { color: rgba(255,255,255,0.85); font-size: 1rem; }
+  a.article-card.featured .article-footer { border-top-color: rgba(255,255,255,0.1); }
+  a.article-card.featured .article-date { color: rgba(255,255,255,0.6); }
+  a.article-card.featured .article-read { color: var(--accent); }
+
+  /* ─── TEAM SECTION ─── */
+  .team { background: var(--white); }
+  .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+  }
+  .team-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+  }
+  .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(13,115,119,0.1);
+      border-color: var(--teal);
+      background: white;
+  }
+  .team-img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: all 0.4s ease;
+      border: 3px solid var(--gray-100);
+      padding: 4px; background: white;
+  }
+  .team-card:hover .team-img { filter: grayscale(0%); border-color: var(--teal); }
+  .team-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
+  .team-role { font-size: 0.85rem; color: var(--teal); font-family: var(--font-mono); text-transform: uppercase; margin: 0.5rem 0 1.2rem; font-weight: 600; }
+  .team-link svg { width: 22px; fill: var(--gray-300); transition: fill 0.3s ease; }
+  .team-link:hover svg { fill: #0077b5; transform: scale(1.1); }
+
+  .article-card.filter-hidden { display: none; }
+  .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem;
+      color: var(--gray-500);
+      font-style: italic;
+      background: var(--gray-50);
+      border-radius: 8px;
+  }
+
+  /* ─── VOLUNTEER / CAREERS ─── */
+  .careers { background: var(--gray-900); }
+  .careers .section-eyebrow { color: var(--teal-light); }
+  .careers .section-eyebrow::before { background: var(--teal-light); }
+  .careers .section-title { color: white; }
+  .careers .section-lead { color: rgba(255,255,255,0.6); }
+
+  .roles-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .role-card {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem; border-radius: 8px; transition: all 0.3s ease;
+  }
+  .role-card:hover {
+    background: rgba(13,115,119,0.15); border-color: var(--teal);
+    transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .role-icon { font-size: 2rem; margin-bottom: 1.5rem; display: block; }
+  .role-title {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+    color: white; margin-bottom: 1rem;
+  }
+  .role-desc {
+    font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.65;
+    margin-bottom: 2rem; font-weight: 400;
+  }
+  .role-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .role-tag {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal-light); background: rgba(13,115,119,0.2);
+    border: 1px solid rgba(13,115,119,0.4);
+    padding: 0.4rem 0.8rem; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* Impact Table */
+  .impact-section {
+    margin-top: 6rem; padding-top: 5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .impact-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start; margin-bottom: 3.5rem;
+  }
+  .impact-title {
+    font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+    color: white; line-height: 1.3;
+  }
+  .impact-desc {
+    font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 400;
+  }
+
+  .contribution-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.95rem; background: rgba(255,255,255,0.02);
+    border-radius: 8px; overflow: hidden;
+  }
+  .contribution-table thead tr {
+    border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);
+  }
+  .contribution-table th {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;
+    text-align: left; padding: 1.2rem 1.5rem;
+  }
+  .contribution-table td {
+    padding: 1.2rem 1.5rem; color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-weight: 400;
+  }
+  .contribution-table tr:hover td { background: rgba(255,255,255,0.04); }
+  .contribution-table .hours {
+    font-family: var(--font-mono); font-weight: 600; color: var(--teal-light);
+    font-size: 1rem;
+  }
+
+  .rewards-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .reward-card {
+    background: rgba(13,115,119,0.08); border: 1px solid rgba(13,115,119,0.3);
+    padding: 2rem; border-radius: 8px; transition: transform 0.3s ease;
+  }
+  .reward-card:hover { transform: translateY(-3px); }
+  .reward-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+  .reward-title { font-weight: 700; color: white; font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .reward-desc { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 400; }
+
+  /* Application CTA */
+  .application-cta {
+    background: linear-gradient(135deg, rgba(13,115,119,0.2) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(13,115,119,0.4);
+    padding: 4rem 3rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  /* ─── CONTACT / FOOTER ─── */
+  .footer-section { background: var(--green-deep); padding: 6rem 0 0; }
+
+  .footer-cta-wrap {
+    text-align: center; padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-cta-eyebrow {
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;
+    color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .footer-cta-title {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 1.8rem;
+  }
+  .footer-cta-title em { font-style: italic; color: var(--teal-light); }
+  .footer-cta-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 540px;
+    margin: 0 auto 3rem; line-height: 1.7; font-weight: 400;
+  }
+
+  .footer-contact {
+    display: flex; align-items: center; justify-content: center; gap: 2.5rem;
+    flex-wrap: wrap; margin-top: 3rem;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem;
+    font-weight: 500; transition: color 0.3s ease;
+  }
+  .contact-item:hover { color: white; }
+  .contact-item svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo-text {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-bottom-links { display: flex; gap: 2.5rem; }
+  .footer-bottom-links a {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500;
+    text-decoration: none; transition: color 0.3s ease;
+  }
+  .footer-bottom-links a:hover { color: white; }
+  .footer-copy {
+    font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE RESPONSIVENESS ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    nav.scrolled { padding: 1rem 2rem; }
+    
+    /* Улучшенное выезжающее меню */
+    .nav-links {
+      position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px;
+      background: var(--white); flex-direction: column; justify-content: center;
+      padding: 3rem; gap: 2.5rem;
+      transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      box-shadow: -10px 0 40px rgba(13,115,119,0.1);
+      z-index: 100;
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 1.2rem; }
+    .nav-links a:not(.nav-cta)::after { display: none; } /* Отключаем подчеркивание в бургере */
+    
+    .hamburger { display: flex; z-index: 101; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 100px; padding-bottom: 4rem; }
+    .hero-left { padding: 2rem 2rem; text-align: center; align-items: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-right { display: none; } /* Скрываем визуал на мобилках для чистоты */
+
+    .container { padding: 0 2rem; }
+    section { padding: 5rem 0; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .article-card.featured { grid-column: span 1; padding: 2rem; }
+    .roles-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .impact-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .rewards-grid { grid-template-columns: 1fr; }
+    
+    .contribution-table th, .contribution-table td { padding: 1rem; font-size: 0.85rem; }
+    .application-cta { padding: 3rem 1.5rem; }
+    
+    .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
+    .footer-bottom-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    .hub-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.8rem 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    
+    .values-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .btn-primary, .btn-outline { width: 100%; text-align: center; }
+    
+    .section-title { font-size: 2.2rem; }
+    .footer-cta-title { font-size: 2rem; }
+    .contribution-table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <span>GVI</span>
+    Global Voice Insights
+  </a>
+  <div class="nav-overlay" id="nav-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 99; transition: opacity 0.3s; opacity: 0;"></div>
+  
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">Why GVI</a></li>
+    <li><a href="#hub">Digest</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#careers">Join Us</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-left">
+      <div class="hero-tag fade-up">Est. 2026 · Youth-Led · Global Reach</div>
+      <h1 class="hero-headline fade-up" style="transition-delay: 0.1s;">
+        The World<br>is <em>Speaking.</em><br>Are You Listening?
+      </h1>
+      <p class="hero-sub fade-up" style="transition-delay: 0.2s;">
+        Redefining Diplomacy for the Next Generation. We decode complex geopolitical shifts into clear, actionable insights — without the fluff.
+      </p>
+      <div class="hero-actions fade-up" style="transition-delay: 0.3s;">
+        <a href="#hub" class="btn-primary">Read the Latest Brief</a>
+        <a href="#careers" class="btn-outline">Join the Team</a>
+      </div>
+    </div>
+
+    <div class="hero-right fade-up" style="transition-delay: 0.4s;">
+      <div class="hero-visual">
+        <div class="hero-visual-header">
+          <div class="hero-visual-header-dot"></div>
+          <div class="hero-visual-header-dot"></div>
+          <div class="hero-visual-header-dot"></div>
+          <span>GVI · GLOBAL BRIEFS</span>
+        </div>
+        <div class="brief-card">
+          <div class="brief-region">📍 East Asia</div>
+          <div class="brief-title">South China Sea Tensions Escalate Amid New Naval Deployments</div>
+          <div class="brief-meta"><span>7 Apr 2026</span><span>4 min read</span></div>
+        </div>
+        <div class="brief-card">
+          <div class="brief-region">📍 Europe</div>
+          <div class="brief-title">NATO Expands Eastern Flank: What This Means for EU Security</div>
+          <div class="brief-meta"><span>5 Apr 2026</span><span>3 min read</span></div>
+        </div>
+        <div class="brief-card">
+          <div class="brief-region">📍 Middle East</div>
+          <div class="brief-title">Ceasefire Talks Resume — A Fragile Diplomatic Window</div>
+          <div class="brief-meta"><span>3 Apr 2026</span><span>5 min read</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-eyebrow fade-up">Why GVI</div>
+      <h2 class="section-title fade-up">Diplomacy Is Not a<br><em>Closed Club.</em></h2>
+
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <p>
+            Global Voice Insights was built on a simple conviction: <strong>the most consequential decisions shaping our world shouldn't be locked behind academic paywalls and political jargon.</strong>
+          </p>
+          <p>
+            We are a youth-led media platform dedicated to making International Relations accessible, rigorous, and relevant. Our writers, researchers, and designers are students and young professionals from across the globe — people who believe clarity is a form of power.
+          </p>
+          <p>
+            We don't do clickbait. We don't do hot takes. We do <strong>verified, nuanced, context-rich analysis</strong> — because the world deserves better than noise.
+          </p>
+
+          <div class="pillars">
+            <div class="pillars-label">Our Three Pillars</div>
+            <div class="pillars-list">
+              <div class="pillar-item">
+                <div class="pillar-num">01</div>
+                <div>
+                  <div class="pillar-name">Weekly Reviews</div>
+                  <div class="pillar-desc">We filter the noise. Get the essential updates on European and global affairs without the fluff.</div>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-num">02</div>
+                <div>
+                  <div class="pillar-name">Diplomacy 101</div>
+                  <div class="pillar-desc">We demystify the elite. We explain 'Soft Power' and 'Sanctions' in a way that actually makes sense.</div>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-num">03</div>
+                <div>
+                  <div class="pillar-name">Youth Voice</div>
+                  <div class="pillar-desc">We provide the microphone. A dedicated platform for students to debate the world's biggest challenges.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up" style="transition-delay: 0.15s;">
+          <div class="values-grid">
+            <div class="value-card">
+              <span class="value-icon">🎯</span>
+              <div class="value-name">Accuracy</div>
+              <div class="value-desc">Every claim is sourced. Every statistic is verified. No exceptions.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">⚖️</span>
+              <div class="value-name">Neutrality</div>
+              <div class="value-desc">We present all sides of complex issues — analysis over advocacy.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">🌍</span>
+              <div class="value-name">Inclusivity</div>
+              <div class="value-desc">Global perspectives from voices that mainstream media ignores.</div>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">🚀</span>
+              <div class="value-name">Youth-First</div>
+              <div class="value-desc">Built by young people, for young people — and the world they'll inherit.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hub" id="hub">
+    <div class="container">
+      <div class="hub-header fade-up">
+        <div>
+          <div class="section-eyebrow">Global News Briefs</div>
+          <h2 class="section-title">The Digest</h2>
+          <p class="section-lead" style="margin-top: 0.5rem;">Professional. Data-driven. Without the fluff.</p>
+        </div>
+        <div class="hub-filter">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Weekly Review">Weekly Review</button>
+          <button class="filter-btn" data-filter="Diplomacy 101">Diplomacy 101</button>
+        </div>
+      </div>
+
+      <div class="articles-grid fade-up" id="articles-grid">
+        <a href="#article" class="article-card featured" data-category="Weekly Review">
+          <div class="article-region">🌐 Weekly Review</div>
+          <div class="article-title">The New Cold Architecture: How Great Power Competition Is Reshaping the Global Order in 2026</div>
+          <div class="article-excerpt">From the Taiwan Strait to the Baltic Sea, the contours of a fragmented world order are becoming unmistakable. GVI's chief analysts break down the shifting tectonic plates of power and what they mean for the next decade of diplomacy.</div>
+          <div class="article-footer">
+            <span class="article-date">07 APR 2026</span>
+            <span class="article-read">Read Brief →</span>
+          </div>
+        </a>
+
+        <a href="#article" class="article-card" data-category="Weekly Review">
+          <div class="article-region">📍 Weekly Review</div>
+          <div class="article-title">The Sahel's Security Vacuum: France Out, Russia In?</div>
+          <div class="article-excerpt">As French forces withdraw from Mali and Burkina Faso, a new strategic competition unfolds across the Sahel corridor.</div>
+          <div class="article-footer">
+            <span class="article-date">05 APR 2026</span>
+            <span class="article-read">Read →</span>
+          </div>
+        </a>
+
+        <a href="#article" class="article-card" data-category="Diplomacy 101">
+          <div class="article-region">📘 Diplomacy 101</div>
+          <div class="article-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
+          <div class="article-excerpt">Why cultural exports and economic sanctions are becoming more effective than traditional military interventions.</div>
+          <div class="article-footer">
+            <span class="article-date">04 APR 2026</span>
+            <span class="article-read">Read →</span>
+          </div>
+        </a>
+
+        <a href="#article" class="article-card" data-category="Weekly Review">
+          <div class="article-region">📍 Weekly Review</div>
+          <div class="article-title">Venezuela's Diplomatic Isolation: Cracks in the Authoritarian Facade</div>
+          <div class="article-excerpt">A new wave of regional pressure is testing Maduro's grip on international legitimacy as elections loom.</div>
+          <div class="article-footer">
+            <span class="article-date">02 APR 2026</span>
+            <span class="article-read">Read →</span>
+          </div>
+        </a>
+
+        <a href="#article" class="article-card" data-category="Diplomacy 101">
+          <div class="article-region">📘 Diplomacy 101</div>
+          <div class="article-title">The Architecture of the UN Security Council</div>
+          <div class="article-excerpt">Breaking down the veto power, the P5, and why reforming the world's most powerful diplomatic body is so difficult.</div>
+          <div class="article-footer">
+            <span class="article-date">01 APR 2026</span>
+            <span class="article-read">Read →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-eyebrow fade-up">The Brains</div>
+      <h2 class="section-title fade-up">Our <em>Experts</em></h2>
+      <div class="team-grid">
+        <div class="team-card fade-up">
+          <img src="https://via.placeholder.com/150" alt="Alexei Volkov" loading="lazy" class="team-img">
+          <div class="team-name">Alexei Volkov</div>
+          <div class="team-role">Chief Security Analyst</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Alexei Volkov on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up" style="transition-delay: 0.1s;">
+          <img src="https://via.placeholder.com/150" alt="Sarah Jenkins" loading="lazy" class="team-img">
+          <div class="team-name">Sarah Jenkins</div>
+          <div class="team-role">Senior Editor</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Sarah Jenkins on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up" style="transition-delay: 0.2s;">
+          <img src="https://via.placeholder.com/150" alt="Omar Al-Fayed" loading="lazy" class="team-img">
+          <div class="team-name">Omar Al-Fayed</div>
+          <div class="team-role">MENA Correspondent</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Omar Al-Fayed on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers" id="careers">
+    <div class="container">
+      <div class="section-eyebrow fade-up">The Architecture of Impact</div>
+      <h2 class="section-title fade-up">Don't Just Read History.<br><em>Help Us Write It.</em></h2>
+      <p class="section-lead fade-up">
+        We are building a global team of student analysts, writers, and designers. Every contribution is tracked, certified, and valued.
+      </p>
+
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <span class="role-icon">✍️</span>
+          <div class="role-title">Writers & Editors</div>
+          <div class="role-desc">
+            Crafting in-depth analytical pieces on global diplomacy. You will transform complex geopolitical shifts into accessible narratives.
+          </div>
+          <div class="role-tags">
+            <span class="role-tag">Writing</span>
+            <span class="role-tag">Editing</span>
+            <span class="role-tag">Analysis</span>
+          </div>
+        </div>
+
+        <div class="role-card fade-up" style="transition-delay: 0.1s;">
+          <span class="role-icon">🎨</span>
+          <div class="role-title">Visual Designers</div>
+          <div class="role-desc">
+            Shaping our project's visual identity. You will develop the infographics and branding that make our insights stand out.
+          </div>
+          <div class="role-tags">
+            <span class="role-tag">Infographics</span>
+            <span class="role-tag">Branding</span>
+            <span class="role-tag">Layout</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="impact-section fade-up">
+        <div class="impact-header">
+          <div>
+            <div class="section-eyebrow" style="color: var(--teal-light);">Contribution Quantified</div>
+            <div class="impact-title">Your Time.<br>Officially Recognised.</div>
+          </div>
+          <div class="impact-desc">
+            GVI operates on a transparent volunteer-hour system. Every task is assigned an official hour value — fully documented for university applications including UCAS, Common App, and scholarship programmes. Your contribution is never invisible here.
+          </div>
+        </div>
+
+        <table class="contribution-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Deliverable (Task)</th>
+              <th>Official Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Writer</td>
+              <td>Analytical Article (per 100 words)</td>
+              <td class="hours">2H</td>
+            </tr>
+            <tr>
+              <td>Editorial</td>
+              <td>Editing & Proofreading (per 500 words)</td>
+              <td class="hours">3H</td>
+            </tr>
+            <tr>
+              <td>Design</td>
+              <td>Social Media Slide / Infographic</td>
+              <td class="hours">3H</td>
+            </tr>
+            <tr>
+              <td>Design</td>
+              <td>Long-read Visual Branding / Layout</td>
+              <td class="hours">5H</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="rewards-grid" style="margin-top: 3.5rem;">
+          <div class="reward-card fade-up">
+            <span class="reward-icon">🎓</span>
+            <div class="reward-title">Official Certification</div>
+            <div class="reward-desc">Signed Certificates for university applications (UCAS, Common App) and internships.</div>
+          </div>
+          <div class="reward-card fade-up" style="transition-delay: 0.1s;">
+            <span class="reward-icon">🛠️</span>
+            <div class="reward-title">Skill Building</div>
+            <div class="reward-desc">Hands-on experience in International Relations, Digital Media, and Public Policy.</div>
+          </div>
+          <div class="reward-card fade-up" style="transition-delay: 0.2s;">
+            <span class="reward-icon">🌍</span>
+            <div class="reward-title">Global Networking</div>
+            <div class="reward-desc">Connect with a community of ambitious peers across Europe and beyond.</div>
+          </div>
+          <div class="reward-card fade-up" style="transition-delay: 0.3s;">
+            <span class="reward-icon">🚀</span>
+            <div class="reward-title">Leadership Track</div>
+            <div class="reward-desc">High-performers are eligible for promotion to Lead or Dept. Head within 3 months.</div>
+          </div>
+        </div>
+
+        <div class="application-cta fade-up">
+          <h3 style="color: white; font-family: var(--font-display); margin-bottom: 1.2rem; font-size: 2.2rem;">Ready to Decode the Future?</h3>
+          <p style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Join the analysts who believe in "News without the fluff." Submit your application through our official portal.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 6px;">Apply Here</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-section" id="contact">
+  <div class="container">
+    <div class="footer-cta-wrap fade-up">
+      <div class="footer-cta-eyebrow">Global Voice Insights</div>
+      <h2 class="footer-cta-title">Don't just watch history happen<br>— <em>help us write it.</em></h2>
+      <p class="footer-cta-sub">
+        Whether you're a reader, a writer, or a designer — there's a place for your voice at GVI. The world is complex. Let's make sense of it together.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#careers" class="btn-primary">Join the Team</a>
+      </div>
+
+      <div class="footer-contact">
+        <a href="mailto:globalvoiceinsights@gmail.com" class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          globalvoiceinsights@gmail.com
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @Global_Voice_Insights
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom fade-up">
+      <div class="footer-logo-text">Global Voice Insights</div>
+      <div class="footer-bottom-links">
+        <a href="#about">About</a>
+        <a href="#hub">Digest</a>
+        <a href="#team">Team</a>
+        <a href="#careers">Join Us</a>
+      </div>
+      <div class="footer-copy">© 2026 Global Voice Insights. Youth-Led. Globally Minded.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Навигация - тень при скролле
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Логика бургер-меню
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const overlay = document.getElementById('nav-overlay');
+
+  function toggleMenu(forceClose) {
+    const isOpen = navLinks.classList.contains('open');
+    const shouldClose = forceClose === true || isOpen;
+    
+    if (shouldClose) {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 300);
+    } else {
+      navLinks.classList.add('open');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // Убираем скролл
+      overlay.style.display = 'block';
+      setTimeout(() => overlay.style.opacity = '1', 10);
+    }
+  }
+
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-controls', 'nav-links');
+
+  hamburger.addEventListener('click', () => toggleMenu());
+  overlay.addEventListener('click', () => toggleMenu(true)); // Закрытие по клику на фон
+
+  // Закрытие при клике на любую ссылку
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(true));
+  });
+
+  // Закрытие по Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) toggleMenu(true);
+  });
+
+  // Логика фильтров статей
+  const articlesGrid = document.getElementById('articles-grid');
+
+  function filterArticles(category) {
+    const cards = document.querySelectorAll('.article-card');
+
+    requestAnimationFrame(() => {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const matches = category === 'All' || cardCategory === category;
+        card.classList.toggle('filter-hidden', !matches);
+        if (matches) visibleCount++;
+      });
+
+      let existingMsg = articlesGrid.querySelector('.empty-state');
+      if (visibleCount === 0) {
+        if (!existingMsg) {
+          const msg = document.createElement('div');
+          msg.className = 'empty-state fade-up visible';
+          msg.textContent = 'No articles found in this category right now.';
+          articlesGrid.appendChild(msg);
+        }
+      } else if (existingMsg) {
+        existingMsg.remove();
+      }
+    });
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filterArticles(btn.getAttribute('data-filter'));
+      });
+  });
+
+  // Анимация при скролле (Intersection Observer)
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Отключаем наблюдение после первого появления
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
