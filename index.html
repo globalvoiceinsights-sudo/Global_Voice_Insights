@@ -50,7 +50,6 @@
 
   html { 
     scroll-behavior: smooth; 
-    /* Предотвращает перекрытие контента фиксированной шапкой при клике на якорные ссылки */
     scroll-padding-top: 90px; 
   }
 
@@ -84,17 +83,9 @@
     font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
     color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
     position: relative;
-    z-index: 101; /* Чтобы лого было поверх мобильного меню */
+    z-index: 101; 
   }
-  .nav-logo  {
-    display: flex; align-items: center; gap: 0.6rem;
-    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
-    color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
-    position: relative;
-    z-index: 101; /* Чтобы лого было поверх мобильного меню */
-  }
 
-  /* Новые стили для картинки-логотипа */
   .nav-logo img.logo-img {
     height: 35px;
     width: auto;
@@ -133,7 +124,7 @@
 
   .hamburger {
     display: none; flex-direction: column; gap: 6px; cursor: pointer;
-    padding: 4px; z-index: 101; /* Поверх мобильного меню */
+    padding: 4px; z-index: 101; 
   }
   .hamburger span {
     display: block; width: 28px; height: 2px; background: var(--gray-700);
@@ -321,7 +312,6 @@
 
   .values-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-    margin-top: 0.5rem;
   }
   .value-card {
     background: white; border: 1px solid var(--gray-100);
@@ -364,6 +354,57 @@
   }
   .pillar-name { font-weight: 700; font-size: 1rem; color: var(--gray-900); }
   .pillar-desc { font-size: 0.85rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.5; }
+
+  /* ─── GVP REPORT SECTION (NEW) ─── */
+  .gvp-section {
+    padding: 6rem 0; 
+    background: var(--teal-pale); 
+    position: relative; 
+    overflow: hidden;
+  }
+  
+  .gvp-grid {
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 4rem; 
+    align-items: center;
+  }
+
+  .gvp-card {
+    background: white; 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--gray-100); 
+    box-shadow: 0 20px 40px rgba(13,115,119,0.1); 
+    position: relative; 
+    z-index: 2;
+  }
+
+  .gvp-card-shadow {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 20px; 
+    right: -20px; 
+    background: var(--teal); 
+    border-radius: 12px; 
+    z-index: 1; 
+    opacity: 0.1;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .pulse-dot {
+    width: 8px; 
+    height: 8px; 
+    background: var(--teal-light); 
+    border-radius: 50%; 
+    animation: pulse 2s infinite;
+  }
 
   /* ─── CONTENT HUB ─── */
   .hub { background: white; }
@@ -663,7 +704,6 @@
     nav { padding: 1.2rem 2rem; }
     nav.scrolled { padding: 1rem 2rem; }
     
-    /* Улучшенное выезжающее меню */
     .nav-links {
       position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px;
       background: var(--white); flex-direction: column; justify-content: center;
@@ -674,7 +714,7 @@
     }
     .nav-links.open { transform: translateX(0); }
     .nav-links a { font-size: 1.2rem; }
-    .nav-links a:not(.nav-cta)::after { display: none; } /* Отключаем подчеркивание в бургере */
+    .nav-links a:not(.nav-cta)::after { display: none; } 
     
     .hamburger { display: flex; z-index: 101; }
 
@@ -682,12 +722,20 @@
     .hero-left { padding: 2rem 2rem; text-align: center; align-items: center; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
-    .hero-right { display: none; } /* Скрываем визуал на мобилках для чистоты */
+    .hero-right { display: none; }
 
     .container { padding: 0 2rem; }
     section { padding: 5rem 0; }
 
     .about-grid { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
+    
+    /* GVP Section Mobile Adjustments */
+    .gvp-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .gvp-grid .section-lead { margin-left: auto; margin-right: auto; }
+    .gvp-grid .btn-primary { margin: 0 auto; }
+    .gvp-grid > div:first-child > div[style*="display: flex"] { justify-content: center; flex-direction: column; }
+    .gvp-card-shadow { top: 10px; right: -10px; }
+
     .articles-grid { grid-template-columns: 1fr; }
     .article-card.featured { grid-column: span 1; padding: 2rem; }
     .roles-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -829,66 +877,6 @@
           </div>
         </div>
 
-        </div>
-        </div>
-      </div>
-    </div>
-  </section> ```
-
-### Шаг 2: Сразу ПОСЛЕ него вставь этот блок:
-
-```html
-  <section id="gvp-report" style="padding: 6rem 0; background: var(--teal-pale); position: relative; overflow: hidden;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-        
-        <div class="fade-up">
-          <div class="section-eyebrow">Active Research</div>
-          <h2 class="section-title">Global Youth Pulse <em>Report</em></h2>
-          <p class="section-lead" style="margin-bottom: 2.5rem;">
-            A strategic youth research initiative focusing on the real experiences of young people globally. We transform raw data into actionable insights to influence global policy.
-          </p>
-          <div style="display: flex; gap: 1.5rem; align-items: center;">
-            <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" class="btn-primary">Take the Survey</a>
-            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--teal); font-weight: 600;">
-              Next Update: May 2026
-            </span>
-          </div>
-        </div>
-
-        <div class="fade-up" style="transition-delay: 0.2s;">
-          <div style="background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid var(--gray-100); box-shadow: 0 20px 40px rgba(13,115,119,0.1); position: relative; z-index: 2;">
-            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 600;">
-              Current Research Theme
-            </div>
-            <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; line-height: 1.3;">
-              Education Access & Future Skills in the Digital Age
-            </div>
-            <div style="padding: 1.2rem; background: var(--gray-50); border-left: 4px solid var(--accent); border-radius: 4px;">
-              <p style="font-size: 0.9rem; color: var(--gray-700); font-style: italic; line-height: 1.5;">
-                "Your contribution is the bridge between youth reality and global policy."
-              </p>
-            </div>
-            <div style="margin-top: 2rem; display: flex; align-items: center; gap: 10px;">
-                <div style="width: 8px; height: 8px; background: var(--teal-light); border-radius: 50%; animation: pulse 2s infinite;"></div>
-                <span style="font-size: 0.8rem; font-weight: 600; color: var(--gray-500);">Live Data Collection</span>
-            </div>
-          </div>
-          <div style="position: absolute; width: 100%; height: 100%; top: 20px; right: -20px; background: var(--teal); border-radius: 12px; z-index: 1; opacity: 0.1;"></div>
-        </div>
-
-      </div>
-    </div>
-    
-    <style>
-      @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.5); opacity: 0.5; }
-        100% { transform: scale(1); opacity: 1; }
-      }
-    </style>
-  </section>
-
         <div class="fade-up" style="transition-delay: 0.15s;">
           <div class="values-grid">
             <div class="value-card">
@@ -913,6 +901,50 @@
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="gvp-section" id="gvp-report">
+    <div class="container">
+      <div class="gvp-grid">
+        
+        <div class="fade-up">
+          <div class="section-eyebrow">Active Research</div>
+          <h2 class="section-title">Global Youth Pulse <em>Report</em></h2>
+          <p class="section-lead" style="margin-bottom: 2.5rem;">
+            A strategic youth research initiative focusing on the real experiences of young people globally. We transform raw data into actionable insights to influence global policy.
+          </p>
+          <div style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" class="btn-primary">Take the Survey</a>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--teal); font-weight: 600;">
+              Next Update: May 2026
+            </span>
+          </div>
+        </div>
+
+        <div class="fade-up" style="transition-delay: 0.2s; position: relative;">
+          <div class="gvp-card">
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 600;">
+              Current Research Theme
+            </div>
+            <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; line-height: 1.3;">
+              Education Access & Future Skills in the Digital Age
+            </div>
+            <div style="padding: 1.2rem; background: var(--gray-50); border-left: 4px solid var(--accent); border-radius: 4px;">
+              <p style="font-size: 0.9rem; color: var(--gray-700); font-style: italic; line-height: 1.5;">
+                "Your contribution is the bridge between youth reality and global policy."
+              </p>
+            </div>
+            <div style="margin-top: 2rem; display: flex; align-items: center; gap: 10px;">
+                <div class="pulse-dot"></div>
+                <span style="font-size: 0.8rem; font-weight: 600; color: var(--gray-500);">Live Data Collection</span>
+            </div>
+          </div>
+          <div class="gvp-card-shadow"></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -995,7 +1027,7 @@
         <img src="assets/WhatsApp Image 2026-04-18 at 12.02.51 AM.jpeg" alt="Reand Baomar" loading="lazy" class="team-img">
           <div class="team-name">Reand Baomar</div>
           <div class="team-role">Researcher, Voice of GVI</div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Alexei Volkov on LinkedIn">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Reand Baomar on LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
         </div>
