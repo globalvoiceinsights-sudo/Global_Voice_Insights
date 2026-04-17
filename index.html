@@ -366,55 +366,69 @@
   .pillar-desc { font-size: 0.85rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.5; }
 <section id="gvp-report" style="padding: 4rem 2rem; background-color: var(--teal-pale); border-radius: 20px; margin: 2rem auto; max-width: 1100px; border: 1px solid var(--gray-100);">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+  <section id="gvp-report" style="padding: 5rem 4rem; background: var(--teal-pale); margin: 4rem 0; position: relative; overflow: hidden;">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
     
     <div>
-      <div style="font-family: var(--font-mono); color: var(--teal); font-size: 0.8rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
-        🌍 Active Project
+      <div style="font-family: var(--font-mono); color: var(--teal); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+        <span style="width: 40px; height: 1px; background: var(--teal);"></span> Active Research Project
       </div>
-      <h2 style="font-family: var(--font-display); font-size: 2.5rem; color: var(--gray-900); margin-bottom: 1.5rem;">
+      
+      <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); color: var(--gray-900); line-height: 1.1; margin-bottom: 2rem;">
         Global Youth Pulse <em>Report</em>
       </h2>
-      <p style="line-height: 1.6; color: var(--gray-700); margin-bottom: 1.5rem; font-size: 1.1rem;">
-        Мы исследуем опыт молодежи по всему миру: от ментального здоровья до будущего образования. Один цикл — один важный вопрос.
+      
+      <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 2rem; max-width: 600px;">
+        A strategic youth research initiative focusing on the real experiences of young people globally. We transform raw data into actionable insights on education, mental health, and social equity.
       </p>
       
-      <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
-          <li style="display: flex; gap: 10px; align-items: start;">
-            <span>📊</span> <span>Собираем опросы и голосовые сообщения из разных стран.</span>
-          </li>
-          <li style="display: flex; gap: 10px; align-items: start;">
-            <span>🎯</span> <span>Превращаем данные в понятные отчеты с реальными цитатами.</span>
-          </li>
-        </ul>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+        <div style="display: flex; gap: 15px;">
+          <span style="font-size: 1.5rem;">📊</span>
+          <div>
+            <strong style="display: block; color: var(--gray-900); margin-bottom: 0.3rem;">Data-Driven Analysis</strong>
+            <span style="font-size: 0.95rem; color: var(--gray-500);">Collecting surveys and voice insights from 50+ countries to decode youth trends.</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <span style="font-size: 1.5rem;">🎯</span>
+          <div>
+            <strong style="display: block; color: var(--gray-900); margin-bottom: 0.3rem;">Amplify Your Voice</strong>
+            <span style="font-size: 0.95rem; color: var(--gray-500);">Turning personal stories into clear reports for global leaders and decision-makers.</span>
+          </div>
+        </div>
       </div>
       
-      <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" class="nav-cta" style="display: inline-block; text-decoration: none; text-align: center; font-size: 1rem; padding: 1rem 2rem;">
-        Пройти опрос & Внести вклад
+      <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" class="nav-cta" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; padding: 1.2rem 2.5rem; font-size: 0.9rem; letter-spacing: 0.05em;">
+        TAKE THE SURVEY
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--gray-500); font-style: italic;">
-        * Твой голос поможет сделать молодежные проблемы заметнее на глобальном уровне.
-      </p>
     </div>
 
-    <div style="position: relative; background: var(--teal); padding: 2rem; border-radius: 20px; color: white; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 10px 30px rgba(13,115,119,0.2);">
-      <div style="font-size: 0.9rem; opacity: 0.8; font-family: var(--font-mono);">Current Status: Data Collection</div>
-      <div style="height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px;">
-         <div style="width: 65%; height: 100%; background: var(--accent); border-radius: 2px;"></div>
+    <div style="background: var(--white); padding: 3rem; border-radius: 4px; border: 1px solid var(--gray-100); box-shadow: 20px 20px 0px var(--teal); position: relative;">
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--teal); margin-bottom: 1rem; text-transform: uppercase;">Current Cycle Progress</div>
+      <div style="font-size: 1.5rem; font-family: var(--font-display); color: var(--gray-900); margin-bottom: 2rem; font-weight: 700;">
+        Education Access & Future Skills
       </div>
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem;">
-        <span>Target: 1000 Responses</span>
-        <span>65% Completed</span>
+      
+      <div style="margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--gray-500);">
+          <span>Global Reach</span>
+          <span style="color: var(--teal); font-weight: 700;">65%</span>
+        </div>
+        <div style="height: 6px; background: var(--gray-50); border-radius: 10px; overflow: hidden;">
+          <div style="width: 65%; height: 100%; background: var(--teal);"></div>
+        </div>
       </div>
-      <div style="margin-top: 2rem; border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-        <p style="font-family: var(--font-display); font-style: italic; font-size: 1.2rem;">
-          "Your insights are the data of tomorrow’s diplomacy."
-        </p>
+      
+      <div style="padding: 1.5rem; background: var(--gray-50); border-left: 3px solid var(--accent); font-style: italic; font-size: 0.95rem; color: var(--gray-700);">
+        "Your contribution is the bridge between youth reality and global policy."
       </div>
     </div>
 
   </div>
 </section>
+    
   /* ─── CONTENT HUB ─── */
   .hub { background: white; }
 
