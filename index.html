@@ -305,7 +305,7 @@
     font-weight: 400; max-width: 600px;
   }
 
-/* ─── ABOUT / WHY GVI ─── */
+  /* ─── ABOUT / WHY GVI ─── */
   .about { background: var(--gray-50); }
 
   .about-grid {
@@ -332,7 +332,9 @@
     border-color: var(--teal); box-shadow: 0 10px 30px rgba(13,115,119,0.1);
     transform: translateY(-5px);
   }
-  .value-icon { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+  .value-icon {
+    font-size: 1.5rem; margin-bottom: 0.8rem; display: block;
+  }
   .value-name {
     font-weight: 700; font-size: 1rem; color: var(--gray-900);
     margin-bottom: 0.5rem;
@@ -346,7 +348,9 @@
     font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
     letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600;
   }
-  .pillars-list { display: flex; flex-direction: column; gap: 1rem; }
+  .pillars-list {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
   .pillar-item {
     display: flex; align-items: flex-start; gap: 1.2rem;
     padding: 1.2rem 1.5rem; background: white;
@@ -361,13 +365,17 @@
   .pillar-name { font-weight: 700; font-size: 1rem; color: var(--gray-900); }
   .pillar-desc { font-size: 0.85rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.5; }
 
-  /* ─── CONTENT HUB STYLES ─── */
-  .hub { background: white; padding: 5rem 0; }
+  /* ─── CONTENT HUB ─── */
+  .hub { background: white; }
+
   .hub-header {
     display: flex; align-items: flex-end; justify-content: space-between;
     margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
   }
-  .hub-filter { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+  .hub-filter {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+  }
   .filter-btn {
     font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.08em;
@@ -379,7 +387,10 @@
     background: var(--teal); color: white; border-color: var(--teal);
     box-shadow: 0 4px 12px rgba(13,115,119,0.2);
   }
-  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+  .articles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
 
   a.article-card {
     text-decoration: none; color: inherit; display: flex; flex-direction: column;
@@ -387,13 +398,57 @@
     border-radius: 8px; transition: all 0.3s ease;
     cursor: pointer; position: relative; overflow: hidden; background: white;
   }
+  a.article-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--teal);
+    transform: scaleY(0); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-origin: bottom;
+  }
+  a.article-card:hover::before { transform: scaleY(1); }
   a.article-card:hover {
     box-shadow: 0 12px 40px rgba(13,115,119,0.1);
-    transform: translateY(-4px);
+    transform: translateY(-4px); border-color: transparent;
   }
 
-  /* ─── TEAM SECTION STYLES ─── */
-  .team { background: var(--white); padding: 5rem 0; }
+  .article-region {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .article-title {
+    font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+    color: var(--gray-900); line-height: 1.4; margin-bottom: 1rem;
+  }
+  .article-excerpt {
+    font-size: 0.9rem; color: var(--gray-500); line-height: 1.6;
+    margin-bottom: 1.5rem; font-weight: 400; flex-grow: 1;
+  }
+  .article-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1rem; border-top: 1px solid var(--gray-50);
+  }
+  .article-date { font-size: 0.75rem; color: var(--gray-500); font-family: var(--font-mono); font-weight: 500; }
+  .article-read {
+    font-size: 0.75rem; font-weight: 700; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 0.08em; transition: transform 0.2s;
+  }
+  a.article-card:hover .article-read { transform: translateX(4px); }
+
+  /* Featured article */
+  a.article-card.featured {
+    grid-column: span 2; background: var(--teal);
+    border-color: var(--teal); padding: 3rem;
+  }
+  a.article-card.featured::before { background: var(--accent); width: 6px; }
+  a.article-card.featured .article-region { color: rgba(255,255,255,0.7); }
+  a.article-card.featured .article-title { color: white; font-size: 1.6rem; }
+  a.article-card.featured .article-excerpt { color: rgba(255,255,255,0.85); font-size: 1rem; }
+  a.article-card.featured .article-footer { border-top-color: rgba(255,255,255,0.1); }
+  a.article-card.featured .article-date { color: rgba(255,255,255,0.6); }
+  a.article-card.featured .article-read { color: var(--accent); }
+
+  /* ─── TEAM SECTION ─── */
+  .team { background: var(--white); }
   .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -408,58 +463,38 @@
       text-align: center;
       transition: all 0.3s ease;
   }
-  .team-card:hover { background: white; border-color: var(--teal); }
+  .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(13,115,119,0.1);
+      border-color: var(--teal);
+      background: white;
+  }
   .team-img {
-      width: 120px; height: 120px; border-radius: 50%;
-      margin: 0 auto 1.5rem; object-fit: cover;
-      filter: grayscale(100%); transition: all 0.4s ease;
-      border: 3px solid var(--gray-100); padding: 4px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: all 0.4s ease;
+      border: 3px solid var(--gray-100);
+      padding: 4px; background: white;
   }
   .team-card:hover .team-img { filter: grayscale(0%); border-color: var(--teal); }
-</style>
-</head>
+  .team-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
+  .team-role { font-size: 0.85rem; color: var(--teal); font-family: var(--font-mono); text-transform: uppercase; margin: 0.5rem 0 1.2rem; font-weight: 600; }
+  .team-link svg { width: 22px; fill: var(--gray-300); transition: fill 0.3s ease; }
+  .team-link:hover svg { fill: #0077b5; transform: scale(1.1); }
 
-<body>
-  <section class="pillars" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-    <div class="pillars-label">Why Global Voice Insights</div>
-    </section>
-
-  <section id="gvp-report" style="padding: 5rem 4rem; background: var(--teal-pale); margin: 4rem 0; position: relative; overflow: hidden; box-sizing: border-box;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
-      <div>
-        <div style="font-family: var(--font-mono); color: var(--teal); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-          <span style="width: 40px; height: 1px; background: var(--teal);"></span> Active Research Project
-        </div>
-        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); color: var(--gray-900); line-height: 1.1; margin-bottom: 2rem;">
-          Global Youth Pulse <em>Report</em>
-        </h2>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 2rem;">
-          A strategic youth research initiative focusing on the real experiences of young people globally. We transform raw data into actionable insights.
-        </p>
-        <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" class="nav-cta" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; padding: 1.2rem 2.5rem; font-size: 0.9rem; background: var(--teal); color: white; border-radius: 4px;">
-          TAKE THE SURVEY
-        </a>
-      </div>
-      <div style="background: var(--white); padding: 3rem; border-radius: 4px; border: 1px solid var(--gray-100); box-shadow: 20px 20px 0px var(--teal);">
-        <div style="font-size: 1.5rem; font-family: var(--font-display); color: var(--gray-900); margin-bottom: 2rem; font-weight: 700;">
-          Education Access & Future Skills
-        </div>
-        <div style="height: 6px; background: var(--gray-50); border-radius: 10px; overflow: hidden;">
-          <div style="width: 65%; height: 100%; background: var(--teal);"></div>
-        </div>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--gray-500);">Current Cycle: 65% Collected</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="hub" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-    </section>
-
-  <section class="team">
-    </section>
-
-</body>
-</html>
+  .article-card.filter-hidden { display: none; }
+  .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem;
+      color: var(--gray-500);
+      font-style: italic;
+      background: var(--gray-50);
+      border-radius: 8px;
+  }
 
   /* ─── VOLUNTEER / CAREERS ─── */
   .careers { background: var(--gray-900); }
