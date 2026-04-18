@@ -8,16 +8,16 @@
 <meta name="description" content="Analysis of Global Crisis Management & Government Systems. How democracies, authoritarian regimes, and hybrid systems approach crises.">
 <meta name="theme-color" content="#0d7377">
 
-<meta property="og:title" content="Global Voice Insights — Redefining Diplomacy">
-<meta property="og:description" content="Decoding complex geopolitical shifts into clear, actionable insights.">
-<meta property="og:image" content="logo1.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://globalvoiceinsights-sudo.github.io/Global_Voice_Insights/">
+<meta property="og:title" content="Analysis of Global Crisis Management & Government Systems — Global Voice Insights">
+<meta property="og:description" content="How different government structures handle global emergencies, balancing speed, trust, and transparency.">
+<meta property="og:image" content="ПУТЬ_К_КАРТИНКЕ_ДЛЯ_СОЦСЕТЕЙ.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="ПУТЬ_К_ЭТОЙ_СТРАНИЦЕ.html">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Analysis of Global Crisis Management & Government Systems — Global Voice Insights">
 <meta name="twitter:description" content="How different government structures handle global emergencies, balancing speed, trust, and transparency.">
-<meta name="twitter:image" content="ВСТАВЬТЕ_ПУТЬ_К_ВАШЕМУ_ФОТО_ЗДЕСЬ.jpg">
+<meta name="twitter:image" content="ПУТЬ_К_КАРТИНКЕ_ДЛЯ_СОЦСЕТЕЙ.jpg">
 
 <link rel="icon" type="image/png" href="logo1.png">
 
@@ -29,7 +29,7 @@
 
 <style>
   /* ═══════════════════════════════════════════
-     DESIGN TOKENS — identical to main site
+     DESIGN TOKENS
   ═══════════════════════════════════════════ */
   :root {
     --teal: #0d7377;
@@ -52,85 +52,29 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-  }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--white);
-    color: var(--gray-900);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: var(--font-body); background: var(--white); color: var(--gray-900); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
   /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(250,250,250,0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
-  }
-  nav.scrolled {
-    box-shadow: 0 4px 30px rgba(13,115,119,0.08);
-    border-bottom: 1px solid var(--gray-100);
-    padding: 1rem 4rem;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(250,250,250,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: all 0.3s ease; }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(13,115,119,0.08); border-bottom: 1px solid var(--gray-100); padding: 1rem 4rem; }
 
-  .nav-logo {
-    display: flex; align-items: center; gap: 0.6rem;
-    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
-    color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
-    position: relative; z-index: 101;
-  }
-  .nav-logo img.logo-img {
-    height: 35px; width: auto; display: block; object-fit: contain;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--teal); text-decoration: none; letter-spacing: -0.01em; position: relative; z-index: 101; }
+  .nav-logo img.logo-img { height: 35px; width: auto; display: block; object-fit: contain; }
 
-  .nav-links {
-    display: flex; align-items: center; gap: 2.5rem; list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
-    text-transform: uppercase; color: var(--gray-700);
-    text-decoration: none; transition: color 0.2s, transform 0.2s;
-    position: relative;
-  }
-  .nav-links a:not(.nav-cta)::after {
-    content: ''; position: absolute; width: 0; height: 2px;
-    bottom: -4px; left: 0; background-color: var(--teal);
-    transition: width 0.3s ease;
-  }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gray-700); text-decoration: none; transition: color 0.2s, transform 0.2s; position: relative; }
+  .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--teal); transition: width 0.3s ease; }
   .nav-links a:not(.nav-cta):hover::after { width: 100%; }
   .nav-links a:hover { color: var(--teal); }
   .nav-links a.active { color: var(--teal); }
   .nav-links a.active::after { width: 100%; }
 
-  .nav-cta {
-    background: var(--teal); color: white !important;
-    padding: 0.6rem 1.6rem; border-radius: 4px;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 14px rgba(13,115,119,0.2);
-  }
-  .nav-cta:hover {
-    background: var(--green-deep) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(13,115,119,0.3);
-  }
+  .nav-cta { background: var(--teal); color: white !important; padding: 0.6rem 1.6rem; border-radius: 4px; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(13,115,119,0.2); }
+  .nav-cta:hover { background: var(--green-deep) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,115,119,0.3); }
 
-  .hamburger {
-    display: none; flex-direction: column; gap: 6px; cursor: pointer;
-    padding: 4px; z-index: 101;
-  }
-  .hamburger span {
-    display: block; width: 28px; height: 2px; background: var(--gray-700);
-    transition: all 0.3s ease; border-radius: 2px;
-  }
+  .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; z-index: 101; }
+  .hamburger span { display: block; width: 28px; height: 2px; background: var(--gray-700); transition: all 0.3s ease; border-radius: 2px; }
   .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--teal); }
   .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--teal); }
@@ -138,366 +82,128 @@
   /* ─── SHARED UTILITIES ─── */
   .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
-  .btn-primary, .btn-outline {
-    padding: 0.85rem 2rem; border-radius: 4px;
-    font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
-    cursor: pointer; text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    display: inline-block; letter-spacing: 0.02em;
-  }
-  .btn-primary {
-    background: var(--teal); color: white; border: none;
-    box-shadow: 0 4px 15px rgba(13,115,119,0.25);
-  }
-  .btn-primary:hover {
-    background: var(--green-deep); transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(13,115,119,0.35);
-  }
-  .btn-outline {
-    background: transparent; color: var(--teal); border: 2px solid var(--teal);
-  }
-  .btn-outline:hover {
-    background: var(--teal); color: white; transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(13,115,119,0.2);
-  }
+  .btn-primary, .btn-outline { padding: 0.85rem 2rem; border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; letter-spacing: 0.02em; }
+  .btn-primary { background: var(--teal); color: white; border: none; box-shadow: 0 4px 15px rgba(13,115,119,0.25); }
+  .btn-primary:hover { background: var(--green-deep); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(13,115,119,0.35); }
+  .btn-outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+  .btn-outline:hover { background: var(--teal); color: white; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(13,115,119,0.2); }
 
   /* ─── ANIMATIONS ─── */
-  .fade-up {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
   /* ═══════════════════════════════════════════
      ARTICLE HERO BANNER
   ═══════════════════════════════════════════ */
-  .article-hero {
-    padding-top: 80px;
-    position: relative;
-    overflow: hidden;
-    background: var(--gray-50);
-  }
+  .article-hero { padding-top: 80px; position: relative; overflow: hidden; background: var(--gray-50); }
+  .article-hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(var(--gray-100) 1px, transparent 1px), linear-gradient(90deg, var(--gray-100) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.4; }
+  .article-hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 80% at 80% 30%, rgba(13,115,119,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 10% 80%, rgba(20,160,133,0.05) 0%, transparent 60%); }
+  .article-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 5rem 4rem 4rem; }
 
-  .article-hero::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none;
-    background-image:
-      linear-gradient(var(--gray-100) 1px, transparent 1px),
-      linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.4;
-  }
-
-  .article-hero::after {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(13,115,119,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(20,160,133,0.05) 0%, transparent 60%);
-  }
-
-  .article-hero-inner {
-    position: relative; z-index: 2;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 5rem 4rem 4rem;
-  }
-
-  .article-breadcrumb {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
-    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
-    text-decoration: none; margin-bottom: 2.5rem;
-    transition: gap 0.2s ease;
-  }
+  .article-breadcrumb { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; margin-bottom: 2.5rem; transition: gap 0.2s ease; }
   .article-breadcrumb:hover { gap: 0.8rem; }
   .article-breadcrumb svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
 
-  .article-category {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
-    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-  .article-category::before {
-    content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal);
-  }
+  .article-category { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .article-category::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal); }
 
-  .article-headline {
-    font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-    font-weight: 900; line-height: 1.08; letter-spacing: -0.02em;
-    color: var(--gray-900); margin-bottom: 1.8rem;
-  }
+  .article-headline { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; color: var(--gray-900); margin-bottom: 1.8rem; }
   .article-headline em { font-style: italic; color: var(--teal); }
 
-  .article-deck {
-    font-size: 1.15rem; line-height: 1.7; color: var(--gray-500);
-    font-weight: 400; max-width: 640px; margin-bottom: 2.5rem;
-  }
+  .article-deck { font-size: 1.15rem; line-height: 1.7; color: var(--gray-500); font-weight: 400; max-width: 640px; margin-bottom: 2.5rem; }
 
-  .article-meta {
-    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
-    padding-top: 2rem; border-top: 1px solid var(--gray-100);
-  }
-  .article-meta-author {
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .author-avatar {
-    width: 42px; height: 42px; border-radius: 50%;
-    object-fit: cover; border: 2px solid var(--teal-pale);
-    background: var(--gray-100);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
-    color: var(--teal); flex-shrink: 0;
-  }
+  .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--gray-100); }
+  .article-meta-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--teal-pale); background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--teal); flex-shrink: 0; }
   .author-name { font-weight: 600; font-size: 0.95rem; color: var(--gray-700); }
   .author-role { font-size: 0.78rem; color: var(--gray-300); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
   .meta-divider { width: 1px; height: 32px; background: var(--gray-100); }
-  .meta-item {
-    font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
-    letter-spacing: 0.06em; text-transform: uppercase;
-  }
+  .meta-item { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500); letter-spacing: 0.06em; text-transform: uppercase; }
 
   /* ═══════════════════════════════════════════
      COVER PHOTO AREA
   ═══════════════════════════════════════════ */
-  .article-cover-wrap {
-    max-width: 860px;
-    margin: 0 auto 0;
-    padding: 0 4rem;
-    position: relative; z-index: 2;
-  }
-
-  .article-cover {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--gray-100);
-    box-shadow: 0 20px 60px rgba(13,115,119,0.12);
-    position: relative;
-  }
-
-  /* Стили для реального изображения обложки */
-  .article-cover img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-
-  .cover-caption {
-    font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
-    letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center;
-  }
+  .article-cover-wrap { max-width: 860px; margin: 0 auto 0; padding: 0 4rem; position: relative; z-index: 2; }
+  .article-cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--gray-100); box-shadow: 0 20px 60px rgba(13,115,119,0.12); position: relative; }
   
-  /* Стили для ссылки-источника фото */
-  .cover-caption a {
-    color: var(--teal);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--teal);
-    transition: all 0.2s ease;
-  }
-  
-  .cover-caption a:hover {
-    color: var(--green-deep);
-    border-bottom: 1px solid var(--green-deep);
-  }
+  .article-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .cover-caption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300); letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center; }
+  .cover-caption a { color: var(--teal); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+  .cover-caption a:hover { border-color: var(--teal); }
 
   /* ═══════════════════════════════════════════
      ARTICLE BODY
   ═══════════════════════════════════════════ */
-  .article-body-wrap {
-    padding: 5rem 0 8rem;
-  }
-
-  .article-layout {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 4rem;
-    display: grid;
-    grid-template-columns: 1fr 240px;
-    gap: 5rem;
-    align-items: start;
-  }
-
+  .article-body-wrap { padding: 5rem 0 8rem; }
+  .article-layout { max-width: 860px; margin: 0 auto; padding: 0 4rem; display: grid; grid-template-columns: 1fr 240px; gap: 5rem; align-items: start; }
   .article-prose { min-width: 0; }
-
-  .article-prose p {
-    font-size: 1.08rem; line-height: 1.85;
-    color: var(--gray-700); font-weight: 400;
-    margin-bottom: 1.8rem;
-  }
-
-  .article-prose h2 {
-    font-family: var(--font-display); font-size: 1.9rem; font-weight: 700;
-    color: var(--gray-900); line-height: 1.2; letter-spacing: -0.02em;
-    margin: 3rem 0 1.2rem;
-  }
+  .article-prose p { font-size: 1.08rem; line-height: 1.85; color: var(--gray-700); font-weight: 400; margin-bottom: 1.8rem; }
+  .article-prose h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--gray-900); line-height: 1.2; letter-spacing: -0.02em; margin: 3rem 0 1.2rem; }
   .article-prose h2 em { font-style: italic; color: var(--teal); }
-
-  .article-prose h3 {
-    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
-    color: var(--gray-900); margin: 2.5rem 0 1rem;
-  }
-
+  .article-prose h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 2.5rem 0 1rem; }
   .article-prose strong { color: var(--teal); font-weight: 600; }
-
-  .article-prose a {
-    color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,115,119,0.3);
-    text-underline-offset: 3px; transition: text-decoration-color 0.2s;
-  }
+  .article-prose a { color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,115,119,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
   .article-prose a:hover { text-decoration-color: var(--teal); }
 
-  .pull-quote {
-    border-left: 4px solid var(--teal);
-    padding: 1.5rem 2rem;
-    margin: 2.5rem 0;
-    background: var(--teal-pale);
-    border-radius: 0 8px 8px 0;
-  }
-  .pull-quote p {
-    font-family: var(--font-display); font-size: 1.25rem !important;
-    font-style: italic; color: var(--teal) !important;
-    line-height: 1.6 !important; margin: 0 !important;
-  }
+  .pull-quote { border-left: 4px solid var(--teal); padding: 1.5rem 2rem; margin: 2.5rem 0; background: var(--teal-pale); border-radius: 0 8px 8px 0; }
+  .pull-quote p { font-family: var(--font-display); font-size: 1.25rem !important; font-style: italic; color: var(--teal) !important; line-height: 1.6 !important; margin: 0 !important; }
 
-  .article-prose figure { margin: 2.5rem 0; }
-  .article-prose figure img {
-    width: 100%; border-radius: 8px; display: block;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-  }
-  .article-prose figure figcaption {
-    font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300);
-    letter-spacing: 0.06em; margin-top: 0.7rem; text-align: center;
-  }
-
-  .article-tags {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--gray-100);
-  }
-  .article-tag {
-    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
-    color: var(--teal); background: var(--teal-pale);
-    border: 1px solid rgba(13,115,119,0.2);
-    padding: 0.4rem 0.9rem; border-radius: 4px;
-    text-transform: uppercase; letter-spacing: 0.08em;
-  }
+  .article-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--gray-100); }
+  .article-tag { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; color: var(--teal); background: var(--teal-pale); border: 1px solid rgba(13,115,119,0.2); padding: 0.4rem 0.9rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
 
   /* ─── SIDEBAR ─── */
-  .article-sidebar {
-    position: sticky; top: 110px;
-  }
-
-  .sidebar-block {
-    background: var(--gray-50); border: 1px solid var(--gray-100);
-    border-radius: 8px; padding: 1.8rem; margin-bottom: 1.5rem;
-  }
-  .sidebar-label {
-    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
-    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
-    margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;
-  }
-  .sidebar-label::before {
-    content: ''; display: inline-block; width: 16px; height: 2px; background: var(--teal);
-  }
+  .article-sidebar { position: sticky; top: 110px; }
+  .sidebar-block { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 8px; padding: 1.8rem; margin-bottom: 1.5rem; }
+  .sidebar-label { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+  .sidebar-label::before { content: ''; display: inline-block; width: 16px; height: 2px; background: var(--teal); }
 
   .toc-list { list-style: none; }
   .toc-list li { margin-bottom: 0.7rem; }
-  .toc-list a {
-    font-size: 0.875rem; color: var(--gray-500); text-decoration: none;
-    line-height: 1.4; transition: color 0.2s;
-    display: flex; align-items: flex-start; gap: 0.5rem;
-  }
-  .toc-list a::before {
-    content: '–'; color: var(--gray-300); flex-shrink: 0; margin-top: 1px;
-  }
+  .toc-list a { font-size: 0.875rem; color: var(--gray-500); text-decoration: none; line-height: 1.4; transition: color 0.2s; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .toc-list a::before { content: '–'; color: var(--gray-300); flex-shrink: 0; margin-top: 1px; }
   .toc-list a:hover { color: var(--teal); }
 
-  .related-item {
-    display: flex; gap: 0.8rem; text-decoration: none; margin-bottom: 1rem;
-    padding-bottom: 1rem; border-bottom: 1px solid var(--gray-100);
-  }
+  .related-item { display: flex; gap: 0.8rem; text-decoration: none; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-100); }
   .related-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .related-item-title {
-    font-family: var(--font-display); font-size: 0.9rem; font-weight: 700;
-    color: var(--gray-900); line-height: 1.4; transition: color 0.2s;
-  }
+  .related-item-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: var(--gray-900); line-height: 1.4; transition: color 0.2s; }
   .related-item:hover .related-item-title { color: var(--teal); }
-  .related-item-cat {
-    font-family: var(--font-mono); font-size: 0.65rem; color: var(--gray-300);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem;
-  }
+  .related-item-cat { font-family: var(--font-mono); font-size: 0.65rem; color: var(--gray-300); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
 
   /* ═══════════════════════════════════════════
      FOOTER
   ═══════════════════════════════════════════ */
   .footer-section { background: var(--green-deep); padding: 6rem 0 0; }
-
-  .footer-cta-wrap {
-    text-align: center; padding-bottom: 5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .footer-cta-eyebrow {
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;
-    color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
-  }
-  .footer-cta-title {
-    font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem;
-  }
+  .footer-cta-wrap { text-align: center; padding-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-cta-eyebrow { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .footer-cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem; }
   .footer-cta-title em { font-style: italic; color: var(--teal-light); }
-  .footer-cta-sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 540px;
-    margin: 0 auto 3rem; line-height: 1.7; font-weight: 400;
-  }
-  .footer-contact {
-    display: flex; align-items: center; justify-content: center; gap: 2.5rem;
-    flex-wrap: wrap; margin-top: 3rem;
-  }
-  .contact-item {
-    display: flex; align-items: center; gap: 0.8rem;
-    color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem;
-    font-weight: 500; transition: color 0.3s ease;
-  }
+  .footer-cta-sub { font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 540px; margin: 0 auto 3rem; line-height: 1.7; font-weight: 400; }
+  .footer-contact { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 3rem; }
+  .contact-item { display: flex; align-items: center; gap: 0.8rem; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease; }
   .contact-item:hover { color: white; }
   .contact-item svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-  .footer-bottom {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem;
-  }
+  
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem; }
   .footer-logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.6); }
   .footer-bottom-links { display: flex; gap: 2.5rem; }
-  .footer-bottom-links a {
-    font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500;
-    text-decoration: none; transition: color 0.3s ease;
-  }
+  .footer-bottom-links a { font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
   .footer-bottom-links a:hover { color: white; }
   .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400; }
 
   /* ═══════════════════════════════════════════
-     RESPONSIVE
+     RESPONSIVE (Мобильная адаптация)
   ═══════════════════════════════════════════ */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     nav.scrolled { padding: 1rem 2rem; }
-
-    .nav-links {
-      position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px;
-      background: var(--white); flex-direction: column; justify-content: center;
-      padding: 3rem; gap: 2.5rem;
-      transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-      box-shadow: -10px 0 40px rgba(13,115,119,0.1); z-index: 100;
-    }
+    .nav-links { position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px; background: var(--white); flex-direction: column; justify-content: center; padding: 3rem; gap: 2.5rem; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); box-shadow: -10px 0 40px rgba(13,115,119,0.1); z-index: 100; }
     .nav-links.open { transform: translateX(0); }
     .nav-links a { font-size: 1.2rem; }
     .nav-links a:not(.nav-cta)::after { display: none; }
     .hamburger { display: flex; }
-
     .article-hero-inner { padding: 4rem 2rem 3rem; }
     .article-cover-wrap { padding: 0 2rem; }
-    
-    /* Обновленная защита для картинок, чтобы не съезжали на планшетах */
-    .article-cover img, .article-prose figure img { max-width: 100%; height: auto; }
-    .article-cover { height: auto; aspect-ratio: 16/9; }
-
     .article-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; }
     .article-sidebar { position: static; }
     .container { padding: 0 2rem; }
@@ -545,12 +251,12 @@
 <header class="article-hero">
   <div class="article-hero-inner">
 
-    <a href="index.html" class="article-breadcrumb fade-up">
+    <a href="ПУТЬ_НА_ГЛАВНУЮ.html#hub" class="article-breadcrumb fade-up">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
       Back to Digest
     </a>
 
-    <div class="article-category fade-up">Diplomacy 101</div>
+    <div class="article-category fade-up">Diplomacy 101 </div>
 
     <h1 class="article-headline fade-up" style="transition-delay:0.1s;">
       Analysis of Global Crisis Management & <br><em>Government Systems</em>
@@ -562,7 +268,7 @@
 
     <div class="article-meta fade-up" style="transition-delay:0.3s;">
       <div class="article-meta-author">
-        <div class="author-avatar">NR</div>
+       <img src="assets/IMG_4966[1].jpeg" alt="Author" class="author-avatar">
         <div>
           <div class="author-name">Nicole T. Ramanand</div>
           <div class="author-role">LEAD Writer · GVI</div>
@@ -572,7 +278,7 @@
       <div class="meta-divider"></div>
       <div class="meta-item">18 April 2026</div>
       <div class="meta-divider"></div>
-      <div class="meta-item">5 min read</div>
+      <div class="meta-item">6 min read</div>
     </div>
 
   </div>
@@ -580,10 +286,9 @@
 
 <div class="article-cover-wrap fade-up">
   <div class="article-cover">
-    <img src="ВСТАВЬТЕ_ПУТЬ_К_ВАШЕМУ_ФОТО_ЗДЕСЬ.jpg" alt="Article Cover">
+    <img src="ПУТЬ_К_ОСНОВНОМУ_ФОТО.jpg" alt="Cover Photo">
   </div>
-  
-  <p class="cover-caption">Photo: <a href="ВСТАВЬТЕ_ССЫЛКУ_НА_ИСТОЧНИК_ЗДЕСЬ" target="_blank" rel="noopener noreferrer">ВСТАВЬТЕ_НАЗВАНИЕ_ИСТОЧНИКА_ЗДЕСЬ</a></p>
+  <p class="cover-caption">Фото: <a href="ССЫЛКА_НА_ИСТОЧНИК" target="_blank">ТЕКСТ_ДЛЯ_ОТОБРАЖЕНИЯ_(АВТОР_ИЛИ_САЙТ)</a></p>
 </div>
 
 <main>
@@ -592,71 +297,34 @@
 
       <article class="article-prose fade-up">
 
-        <p>
-          No government systems respond to crises in the same way—and those differences can determine survival.
-        </p>
-
-        <p>
-          Events such as natural disasters, pandemics, economic recessions and political turmoil force government leaders to make high stake decisions in a matter of time, often with limited information. While all governments aim to protect their populations, the way they respond varies depending on their structure. Democracies, authoritarian regimes, and hybrid systems each approach crisis with different priorities and morals in mind.
-        </p>
-
-        <p>
-          Ultimately, while authoritarian systems tend to produce more restrictions in a short amount of time, democratic systems tend to produce other sustainable outcomes by fostering public trust, transparency, and accountability.
-        </p>
+        <p>No government systems respond to crises in the same way—and those differences can determine survival.</p>
+        <p>Events such as natural disasters, pandemics, economic recessions and political turmoil force government leaders to make high stake decisions in a matter of time, often with limited information. While all governments aim to protect their populations, the way they respond varies depending on their structure. Democracies, authoritarian regimes, and hybrid systems each approach crisis with different priorities and morals in mind.</p>
+        <p>Ultimately, while authoritarian systems tend to produce more restrictions in a short amount of time, democratic systems tend to produce other sustainable outcomes by fostering public trust, transparency, and accountability.</p>
 
         <h2 id="speed-of-response">Speed of Response: <em>Authoritarian vs. Democratic</em></h2>
-
-        <p>
-          To begin, one of the wide-known contrasts between government systems during a crisis is the <strong>speed of response</strong>. Authoritarian regimes, which keep power in a single authority, can implement search measures almost immediately. This allows for rapid lockdowns, strict enforcement, and coordinated national strategies. For example, countries like Vietnam and Singapore were able to quickly contain the spread of COVID-19 through quick decision making throughout the government.
-        </p>
-
-        <p>
-          However, this contrasts to democratic governments, who often face delays in action due to debate, legal checks, and the need for public approval. However, this slower process does not necessarily indicate weakness. Instead, it forms a union throughout their country, designed to prevent misuse of power. While speed can be critical in the early stages of a crisis, it does not guarantee long-term effectiveness.
-        </p>
+        <p>To begin, one of the wide-known contrasts between government systems during a crisis is the <strong>speed of response</strong>. Authoritarian regimes, which keep power in a single authority, can implement search measures almost immediately. This allows for rapid lockdowns, strict enforcement, and coordinated national strategies. For example, countries like Vietnam and Singapore were able to quickly contain the spread of COVID-19 through quick decision making throughout the government.</p>
+        <p>However, this contrasts to democratic governments, who often face delays in action due to debate, legal checks, and the need for public approval. However, this slower process does not necessarily indicate weakness. Instead, it forms a union throughout their country, designed to prevent misuse of power. While speed can be critical in the early stages of a crisis, it does not guarantee long-term effectiveness.</p>
 
         <h2 id="trust-transparency">Trust and Transparency: <em>The Democratic Advantage</em></h2>
-
-        <p>
-          To build off of that idea, another key role in a government is <strong>trust and transparency</strong>. Democratic systems tend to emphasize open communication, data sharing, and accountability to the public. This transparency can lead to higher levels of cooperation and participation, as citizens are more likely to follow guidelines when they understand the reasoning behind them. Countries such as South Korea and Taiwan demonstrated how clear communication and public trust can lead to effective crisis management without extreme enforcement measures.
-        </p>
+        <p>To build off of that idea, another key role in a government is <strong>trust and transparency</strong>. Democratic systems tend to emphasize open communication, data sharing, and accountability to the public. This transparency can lead to higher levels of cooperation and participation, as citizens are more likely to follow guidelines when they understand the reasoning behind them. Countries such as South Korea and Taiwan demonstrated how clear communication and public trust can lead to effective crisis management without extreme enforcement measures.</p>
 
         <div class="pull-quote">
           <p>"While these systems may achieve short-term compliance, maintaining trust with citizens over a prolonged crisis will be more challenging."</p>
         </div>
 
-        <p>
-          As opposed to authoritarian governments, who may hide information or control the voice of the people, which will restrict the public's ability to speak freely. While these systems may achieve short-term compliance, maintaining trust with citizens/the public over a prolonged crisis will be more challenging.
-        </p>
+        <p>As opposed to authoritarian governments, who may hide information or control the voice of the people, which will restrict the public's ability to speak freely. While these systems may achieve short-term compliance, maintaining trust with citizens/the public over a prolonged crisis will be more challenging.</p>
 
         <h2 id="economic-response">Economic Response: <em>Parliamentary vs. Presidential</em></h2>
-
-        <p>
-          An important area regarding government responses to crises is and will always be their economic response. Parliamentary systems, where the executive and legislative branches are closely aligned, often overcome economic setback measures with efficiency. This allows faster distribution of aid to individuals and businesses.
-        </p>
-
-        <p>
-          On the other hand, systems with strong checks and balances, such as presidential democracies, may experience delays within this area due to political disagreement. However, these delays have the potential to result in more thoroughly evaluated policies that are better suited for long-term recovery. This highlights a key-trade off; rapid action versus carefully considered solutions.
-        </p>
+        <p>An important area regarding government responses to crises is and will always be their economic response. Parliamentary systems, where the executive and legislative branches are closely aligned, often overcome economic setback measures with efficiency. This allows faster distribution of aid to individuals and businesses.</p>
+        <p>On the other hand, systems with strong checks and balances, such as presidential democracies, may experience delays within this area due to political disagreement. However, these delays have the potential to result in more thoroughly evaluated policies that are better suited for long-term recovery. This highlights a key-trade off; rapid action versus carefully considered solutions.</p>
 
         <h2 id="structural-governance">Structural Governance: <em>Federal, Unitary, and Technocratic</em></h2>
-
-        <p>
-          Looking beyond authority type, the structure of governance will affect crisis management within countries. Federal systems, such as Germany, distribute power across regional governments, allowing for localized responses tailored to specific conditions. This flexibility can be beneficial in diverse countries where different regions face different challenges.
-        </p>
-
-        <p>
-          As opposed to countries like France, where unitary systems implement uniform national policies, which can ensure consistency but may overlook local needs. In addition to that, governments that incorporate expert-led decision-making, or technocratic elements, often perform better in complex crises that require scientific and technical knowledge. This suggests that effectiveness is not determined by the regime type alone, but by how well governments adapt their structures and policies to the situations.
-        </p>
+        <p>Looking beyond authority type, the structure of governance will affect crisis management within countries. Federal systems, such as Germany, distribute power across regional governments, allowing for localized responses tailored to specific conditions. This flexibility can be beneficial in diverse countries where different regions face different challenges.</p>
+        <p>As opposed to countries like France, where unitary systems implement uniform national policies, which can ensure consistency but may overlook local needs. In addition to that, governments that incorporate expert-led decision-making, or technocratic elements, often perform better in complex crises that require scientific and technical knowledge. This suggests that effectiveness is not determined by the regime type alone, but by how well governments adapt their structures and policies to the situations.</p>
 
         <h2 id="conclusion">Conclusion</h2>
-
-        <p>
-          To conclude, no single regime has a monopoly on effective crisis response. Authoritarian governments may excel in speed and control while democratic systems prioritize transparency and long term legitimacy. Each approach comes with its own strengths and limitations, and the success of a response often depends on how well these elements are balanced.
-        </p>
-
-        <p>
-          Ultimately, the most effective governments are those that can act decisively while maintaining public trust, actively demonstrating that legitimacy is just as important as authority in times of crisis.
-        </p>
+        <p>To conclude, no single regime has a monopoly on effective crisis response. Authoritarian governments may excel in speed and control while democratic systems prioritize transparency and long term legitimacy. Each approach comes with its own strengths and limitations, and the success of a response often depends on how well these elements are balanced.</p>
+        <p>Ultimately, the most effective governments are those that can act decisively while maintaining public trust, actively demonstrating that legitimacy is just as important as authority in times of crisis.</p>
 
         <div class="article-tags">
           <span class="article-tag">Crisis Management</span>
@@ -683,19 +351,19 @@
         <div class="sidebar-block">
           <div class="sidebar-label">Related</div>
 
-          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
+          <a href="ПУТЬ_К_ДРУГОЙ_СТАТЬЕ_1.html" class="related-item">
             <div>
               <div class="related-item-title">The Architecture of the UN Security Council</div>
               <div class="related-item-cat">Diplomacy 101</div>
             </div>
           </a>
-          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
+          <a href="ПУТЬ_К_ДРУГОЙ_СТАТЬЕ_2.html" class="related-item">
             <div>
               <div class="related-item-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
               <div class="related-item-cat">Diplomacy 101</div>
             </div>
           </a>
-          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
+          <a href="ПУТЬ_К_ДРУГОЙ_СТАТЬЕ_3.html" class="related-item">
             <div>
               <div class="related-item-title">The New Cold Architecture: Reshaping the Global Order</div>
               <div class="related-item-cat">Weekly Review</div>
