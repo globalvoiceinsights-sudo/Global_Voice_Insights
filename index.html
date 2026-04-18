@@ -488,6 +488,12 @@
   a.article-card.featured .article-date { color: rgba(255,255,255,0.6); }
   a.article-card.featured .article-read { color: var(--accent); }
 
+  /* New style for Archive button */
+  .archive-cta {
+    grid-column: 1 / -1; display: flex; justify-content: center; margin-top: 4rem;
+  }
+  .btn-outline.btn-wide { padding-left: 3rem; padding-right: 3rem; font-weight: 600; }
+
   /* ─── TEAM SECTION ─── */
   .team { background: var(--white); }
   .team-grid {
@@ -523,8 +529,17 @@
   .team-card:hover .team-img { filter: grayscale(0%); border-color: var(--teal); }
   .team-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
   .team-role { font-size: 0.85rem; color: var(--teal); font-family: var(--font-mono); text-transform: uppercase; margin: 0.5rem 0 1.2rem; font-weight: 600; }
-  .team-link svg { width: 22px; fill: var(--gray-300); transition: fill 0.3s ease; }
-  .team-link:hover svg { fill: #0077b5; transform: scale(1.1); }
+  .team-link svg { width: 22px; height: 22px; fill: var(--gray-300); transition: fill 0.3s ease; }
+  .team-link:hover svg { fill: #E1306C; transform: scale(1.1); }
+
+  /* New Volunteer Cards Style */
+  .team-card.volunteer { border-color: var(--gray-100); border-style: dashed; }
+  .team-card.volunteer .team-img { filter: grayscale(100%); }
+  .team-card.volunteer:hover { border-color: var(--accent); border-style: solid; }
+  .team-card.volunteer:hover .team-img { filter: grayscale(0%); }
+  .team-card.volunteer:hover .team-role { color: var(--accent); }
+  .team-card.volunteer .team-link svg { fill: var(--gray-300); }
+  .team-card.volunteer:hover .team-link svg { fill: #E1306C; }
 
   .article-card.filter-hidden { display: none; }
   .empty-state {
@@ -699,7 +714,7 @@
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* ─── MOBILE RESPONSIVENESS ─── */
+  /* ─── MOBILE RESPONSIVENESS (IMPROVED GRID REFLOW) ─── */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     nav.scrolled { padding: 1rem 2rem; }
@@ -736,8 +751,11 @@
     .gvp-grid > div:first-child > div[style*="display: flex"] { justify-content: center; flex-direction: column; }
     .gvp-card-shadow { top: 10px; right: -10px; }
 
+    /* Fixing CSS grid for articles: 1 col on mobile */
     .articles-grid { grid-template-columns: 1fr; }
+    /* Featured article doesn't need to span 2 on 1-column layout */
     .article-card.featured { grid-column: span 1; padding: 2rem; }
+    
     .roles-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .impact-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .rewards-grid { grid-template-columns: 1fr; }
@@ -801,7 +819,7 @@
       </p>
       <div class="hero-actions fade-up" style="transition-delay: 0.3s;">
         <a href="#hub" class="btn-primary">Read the Latest Brief</a>
-        <a href="https://forms.gle/agXzqzhBYk41tYG17" target="_blank" rel="noopener noreferrer" class="btn-outline">Join the Team</a>
+        <a href="#careers" class="btn-outline">Join the Team</a>
       </div>
     </div>
 
@@ -965,7 +983,7 @@
       </div>
 
       <div class="articles-grid fade-up" id="articles-grid">
-        <a href="INSERT_ARTICLE_LINK_HERE" class="article-card featured" data-category="Weekly Review">
+        <a href="#article" class="article-card featured" data-category="Weekly Review">
           <div class="article-region">🌐 Weekly Review</div>
           <div class="article-title">The New Cold Architecture: How Great Power Competition Is Reshaping the Global Order in 2026</div>
           <div class="article-excerpt">From the Taiwan Strait to the Baltic Sea, the contours of a fragmented world order are becoming unmistakable. GVI's chief analysts break down the shifting tectonic plates of power and what they mean for the next decade of diplomacy.</div>
@@ -975,7 +993,7 @@
           </div>
         </a>
 
-        <a href="INSERT_ARTICLE_LINK_HERE" class="article-card" data-category="Weekly Review">
+        <a href="#article" class="article-card" data-category="Weekly Review">
           <div class="article-region">📍 Weekly Review</div>
           <div class="article-title">The Sahel's Security Vacuum: France Out, Russia In?</div>
           <div class="article-excerpt">As French forces withdraw from Mali and Burkina Faso, a new strategic competition unfolds across the Sahel corridor.</div>
@@ -985,7 +1003,7 @@
           </div>
         </a>
 
-        <a href="INSERT_ARTICLE_LINK_HERE" class="article-card" data-category="Diplomacy 101">
+        <a href="#article" class="article-card" data-category="Diplomacy 101">
           <div class="article-region">📘 Diplomacy 101</div>
           <div class="article-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
           <div class="article-excerpt">Why cultural exports and economic sanctions are becoming more effective than traditional military interventions.</div>
@@ -995,7 +1013,7 @@
           </div>
         </a>
 
-        <a href="INSERT_ARTICLE_LINK_HERE" class="article-card" data-category="Weekly Review">
+        <a href="#article" class="article-card" data-category="Weekly Review">
           <div class="article-region">📍 Weekly Review</div>
           <div class="article-title">Venezuela's Diplomatic Isolation: Cracks in the Authoritarian Facade</div>
           <div class="article-excerpt">A new wave of regional pressure is testing Maduro's grip on international legitimacy as elections loom.</div>
@@ -1005,7 +1023,7 @@
           </div>
         </a>
 
-        <a href="INSERT_ARTICLE_LINK_HERE" class="article-card" data-category="Diplomacy 101">
+        <a href="#article" class="article-card" data-category="Diplomacy 101">
           <div class="article-region">📘 Diplomacy 101</div>
           <div class="article-title">The Architecture of the UN Security Council</div>
           <div class="article-excerpt">Breaking down the veto power, the P5, and why reforming the world's most powerful diplomatic body is so difficult.</div>
@@ -1014,6 +1032,10 @@
             <span class="article-read">Read →</span>
           </div>
         </a>
+
+        <div class="archive-cta fade-up" style="transition-delay: 0.1s;" id="archive-button">
+          <a href="#" class="btn-outline btn-wide">View Full Archive →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1021,30 +1043,62 @@
   <section class="team" id="team">
     <div class="container">
       <div class="section-eyebrow fade-up">The Brains</div>
-      <h2 class="section-title fade-up">Our <em>Experts</em></h2>
+      <h2 class="section-title fade-up">Our <em>Core Team</em> Members</h2>
       <div class="team-grid">
         <div class="team-card fade-up">
         <img src="assets/WhatsApp Image 2026-04-18 at 12.02.51 AM.jpeg" alt="Reand Baomar" loading="lazy" class="team-img">
           <div class="team-name">Reand Baomar</div>
           <div class="team-role">Researcher, Voice of GVI</div>
-          <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Reand Baomar on LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Reand Baomar on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
         <div class="team-card fade-up" style="transition-delay: 0.1s;">
-          <img src="https://via.placeholder.com/150" alt="Sarah Jenkins" loading="lazy" class="team-img">
+          <img src="https://via.placeholder.com/150/666666/ffffff?text=Sarah+J" alt="Sarah Jenkins" loading="lazy" class="team-img">
           <div class="team-name">Sarah Jenkins</div>
           <div class="team-role">Senior Editor</div>
-          <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Sarah Jenkins on LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Sarah Jenkins on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
         <div class="team-card fade-up" style="transition-delay: 0.2s;">
           <img src="https://via.placeholder.com/150" alt="Omar Al-Fayed" loading="lazy" class="team-img">
           <div class="team-name">Omar Al-Fayed</div>
           <div class="team-role">MENA Correspondent</div>
-          <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Omar Al-Fayed on LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Omar Al-Fayed on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up volunteer" style="transition-delay: 0.3s;">
+          <img src="https://via.placeholder.com/150/bbbbbb/ffffff?text=Volunteer" alt="Volunteer 1" loading="lazy" class="team-img">
+          <div class="team-name">Alex M.</div>
+          <div class="team-role">GVI Volunteer</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up volunteer" style="transition-delay: 0.4s;">
+          <img src="https://via.placeholder.com/150/bbbbbb/ffffff?text=Volunteer" alt="Volunteer 2" loading="lazy" class="team-img">
+          <div class="team-name">Priya S.</div>
+          <div class="team-role">GVI Volunteer</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up volunteer" style="transition-delay: 0.5s;">
+          <img src="https://via.placeholder.com/150/bbbbbb/ffffff?text=Volunteer" alt="Volunteer 3" loading="lazy" class="team-img">
+          <div class="team-name">Chen W.</div>
+          <div class="team-role">GVI Volunteer</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+        <div class="team-card fade-up volunteer" style="transition-delay: 0.6s;">
+          <img src="https://via.placeholder.com/150/bbbbbb/ffffff?text=Volunteer" alt="Volunteer 4" loading="lazy" class="team-img">
+          <div class="team-name">Maria G.</div>
+          <div class="team-role">GVI Volunteer</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.073-4.948-.197-4.359-2.614-6.779-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
       </div>
@@ -1156,7 +1210,7 @@
        <div class="application-cta fade-up">
           <h3 style="color: white; font-family: var(--font-display); margin-bottom: 1.2rem; font-size: 2.2rem;">Ready to Decode the Future?</h3>
           <p style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Join the analysts who believe in "News without the fluff." Submit your application through our official portal.</p>
-          <a href="https://forms.gle/agXzqzhBYk41tYG17" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 6px;">Apply Here</a>
+          <a href="https://forms.gle/uF2Xt4pMfpKxRdh56" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 6px;">Apply Here</a>
         </div>
 
       </div>
@@ -1173,7 +1227,7 @@
         Whether you're a reader, a writer, or a designer — there's a place for your voice at GVI. The world is complex. Let's make sense of it together.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://forms.gle/agXzqzhBYk41tYG17" target="_blank" rel="noopener noreferrer" class="btn-primary">Join the Team</a>
+        <a href="#careers" class="btn-primary">Join the Team</a>
       </div>
 
       <div class="footer-contact">
@@ -1181,7 +1235,7 @@
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           globalvoiceinsights@gmail.com
         </a>
-       <a href="https://www.instagram.com/global_voice_insight?igsh=MTNhbndwM2JjbGV2dg==" target="_blank" rel="noopener noreferrer" class="contact-item">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="contact-item">
           <svg viewBox="0 0 24 24">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1254,8 +1308,9 @@
     if (e.key === 'Escape' && navLinks.classList.contains('open')) toggleMenu(true);
   });
 
-  // Логика фильтров статей
+  // Логика фильтров статей + кнопка архива
   const articlesGrid = document.getElementById('articles-grid');
+  const archiveBtn = document.getElementById('archive-button');
 
   function filterArticles(category) {
     const cards = document.querySelectorAll('.article-card');
@@ -1268,6 +1323,15 @@
         card.classList.toggle('filter-hidden', !matches);
         if (matches) visibleCount++;
       });
+
+      // Логика кнопки архива: показываем только для 'All' или 'Weekly Review'
+      if (archiveBtn) {
+        if (category === 'All' || category === 'Weekly Review') {
+          archiveBtn.style.display = 'flex';
+        } else {
+          archiveBtn.style.display = 'none';
+        }
+      }
 
       let existingMsg = articlesGrid.querySelector('.empty-state');
       if (visibleCount === 0) {
