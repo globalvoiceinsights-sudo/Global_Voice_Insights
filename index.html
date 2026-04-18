@@ -10,23 +10,21 @@
 
 <meta property="og:title" content="Global Voice Insights — Redefining Diplomacy">
 <meta property="og:description" content="Decoding complex geopolitical shifts into clear, actionable insights.">
-<meta property="og:image" content="https://globalvoiceinsights-sudo.github.io/Global_Voice_Insights/logo1.png">
+<meta property="og:image" content="ПУТЬ_К_ВАШЕМУ_ЛОГОТИПУ/logo1.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://globalvoiceinsights-sudo.github.io/Global_Voice_Insights/">
-
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Global Voice Insights — Redefining Diplomacy">
 <meta name="twitter:description" content="Decoding complex geopolitical shifts into clear, actionable insights.">
-<meta name="twitter:image" content="logo1.png">
+<meta name="twitter:image" content="ПУТЬ_К_ВАШЕМУ_ЛОГОТИПУ/logo1.png">
 
-<link rel="icon" type="image/png" href="logo1.png">
+<link rel="icon" type="image/png" href="ПУТЬ_К_ВАШЕМУ_ЛОГОТИПУ/logo1.png">
 
 <title>Global Voice Insights — Redefining Diplomacy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<noscript><style>.article-card.filter-hidden { display: block !important; } .hamburger { display: none !important; } .nav-links { transform: translateX(0) !important; }</style></noscript>
 
 <style>
   :root {
@@ -92,6 +90,7 @@
     height: 35px;
     width: auto;
     display: block;
+    object-fit: contain;
   }
 
   .nav-links {
@@ -139,7 +138,8 @@
   /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding-top: 80px;
     position: relative; overflow: hidden;
     align-items: center;
@@ -197,13 +197,16 @@
     display: flex; gap: 1rem; flex-wrap: wrap;
   }
 
-  .btn-primary {
-    background: var(--teal); color: white;
-    padding: 1rem 2.2rem; border: none; border-radius: 4px;
+  .btn-primary, .btn-outline {
+    padding: 1rem 2.2rem; border-radius: 4px;
     font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
     cursor: pointer; text-decoration: none;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: inline-block; letter-spacing: 0.02em;
+  }
+
+  .btn-primary {
+    background: var(--teal); color: white; border: none;
     box-shadow: 0 4px 15px rgba(13,115,119,0.25);
   }
   .btn-primary:hover { 
@@ -214,11 +217,7 @@
 
   .btn-outline {
     background: transparent; color: var(--teal);
-    padding: 1rem 2.2rem; border: 2px solid var(--teal); border-radius: 4px;
-    font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
-    cursor: pointer; text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block; letter-spacing: 0.02em;
+    border: 2px solid var(--teal);
   }
   .btn-outline:hover { 
     background: var(--teal); color: white; 
@@ -255,7 +254,9 @@
   .about { background: var(--gray-50); }
 
   .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 6rem;
     align-items: start; margin-top: 4rem;
   }
 
@@ -266,7 +267,9 @@
   .about-text strong { color: var(--teal); font-weight: 600; }
 
   .values-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1.5rem;
   }
   .value-card {
     background: white; border: 1px solid var(--gray-100);
@@ -277,13 +280,8 @@
     border-color: var(--teal); box-shadow: 0 10px 30px rgba(13,115,119,0.1);
     transform: translateY(-5px);
   }
-  .value-icon {
-    font-size: 1.5rem; margin-bottom: 0.8rem; display: block;
-  }
-  .value-name {
-    font-weight: 700; font-size: 1rem; color: var(--gray-900);
-    margin-bottom: 0.5rem;
-  }
+  .value-icon { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+  .value-name { font-weight: 700; font-size: 1rem; color: var(--gray-900); margin-bottom: 0.5rem; }
   .value-desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
 
   .pillars {
@@ -293,9 +291,7 @@
     font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
     letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600;
   }
-  .pillars-list {
-    display: flex; flex-direction: column; gap: 1rem;
-  }
+  .pillars-list { display: flex; flex-direction: column; gap: 1rem; }
   .pillar-item {
     display: flex; align-items: flex-start; gap: 1.2rem;
     padding: 1.2rem 1.5rem; background: white;
@@ -320,7 +316,7 @@
   
   .gvp-grid {
     display: grid; 
-    grid-template-columns: 1.2fr 0.8fr; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 4rem; 
     align-items: center;
   }
@@ -354,8 +350,7 @@
   }
 
   .pulse-dot {
-    width: 8px; 
-    height: 8px; 
+    width: 8px; height: 8px; 
     background: var(--teal-light); 
     border-radius: 50%; 
     animation: pulse 2s infinite;
@@ -369,9 +364,7 @@
     margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
   }
 
-  .hub-filter {
-    display: flex; gap: 0.8rem; flex-wrap: wrap;
-  }
+  .hub-filter { display: flex; gap: 0.8rem; flex-wrap: wrap; }
   .filter-btn {
     font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.08em;
@@ -385,7 +378,10 @@
   }
 
   .articles-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    display: grid; 
+    /* Идеальная CSS Grid сетка, адаптируется сама без медиа запросов */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 2rem;
   }
 
   a.article-card {
@@ -430,10 +426,12 @@
   }
   a.article-card:hover .article-read { transform: translateX(4px); }
 
-  /* Featured article */
+  /* Featured article - растягивается на 2 колонки, если есть место */
   a.article-card.featured {
-    grid-column: span 2; background: var(--teal);
-    border-color: var(--teal); padding: 3rem;
+    background: var(--teal); border-color: var(--teal); padding: 3rem;
+  }
+  @media (min-width: 768px) {
+      a.article-card.featured { grid-column: span 2; }
   }
   a.article-card.featured::before { background: var(--accent); width: 6px; }
   a.article-card.featured .article-region { color: rgba(255,255,255,0.7); }
@@ -452,34 +450,26 @@
   .team { background: var(--white); }
   .team-grid {
       display: grid;
-      /* Используем min(100%, 260px) чтобы на маленьких экранах не было горизонтального скролла */
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      /* Отличная практика для мобильных, не нужен media query */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2.5rem;
       margin-top: 4rem;
   }
   .team-card {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-100);
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
+      background: var(--gray-50); border: 1px solid var(--gray-100);
+      border-radius: 12px; padding: 2.5rem 2rem;
+      text-align: center; transition: all 0.3s ease;
   }
   .team-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(13,115,119,0.1);
-      border-color: var(--teal);
-      background: white;
+      transform: translateY(-8px); box-shadow: 0 15px 35px rgba(13,115,119,0.1);
+      border-color: var(--teal); background: white;
   }
   .team-img {
-      width: 120px; height: 120px;
-      border-radius: 50%;
+      width: 120px; height: 120px; border-radius: 50%;
       margin: 0 auto 1.5rem;
-      object-fit: cover;
-      filter: grayscale(100%);
-      transition: all 0.4s ease;
-      border: 3px solid var(--gray-100);
-      padding: 4px; background: white;
+      object-fit: cover; /* Ключевое свойство, чтобы фото не искажались */
+      filter: grayscale(100%); transition: all 0.4s ease;
+      border: 3px solid var(--gray-100); padding: 4px; background: white;
   }
   .team-card:hover .team-img { filter: grayscale(0%); border-color: var(--teal); }
   .team-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
@@ -496,15 +486,11 @@
   .team-card.volunteer .team-link svg { fill: var(--gray-300); }
   .team-card.volunteer:hover .team-link svg { fill: #E1306C; }
 
-  .article-card.filter-hidden { display: none; }
+  .article-card.filter-hidden { display: none !important; }
   .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 5rem;
-      color: var(--gray-500);
-      font-style: italic;
-      background: var(--gray-50);
-      border-radius: 8px;
+      grid-column: 1 / -1; text-align: center; padding: 5rem;
+      color: var(--gray-500); font-style: italic;
+      background: var(--gray-50); border-radius: 8px;
   }
 
   /* ─── VOLUNTEER / CAREERS ─── */
@@ -516,9 +502,8 @@
 
   .roles-grid {
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); 
-    gap: 2rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; margin-top: 4rem;
   }
 
   .role-card {
@@ -530,14 +515,8 @@
     transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
   .role-icon { font-size: 2rem; margin-bottom: 1.5rem; display: block; }
-  .role-title {
-    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
-    color: white; margin-bottom: 1rem;
-  }
-  .role-desc {
-    font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.65;
-    margin-bottom: 2rem; font-weight: 400;
-  }
+  .role-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .role-desc { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 2rem; font-weight: 400; }
   .role-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .role-tag {
     font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
@@ -548,30 +527,17 @@
   }
 
   /* Impact Table */
-  .impact-section {
-    margin-top: 6rem; padding-top: 5rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .impact-header {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: start; margin-bottom: 3.5rem;
-  }
-  .impact-title {
-    font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
-    color: white; line-height: 1.3;
-  }
-  .impact-desc {
-    font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 400;
-  }
+  .impact-section { margin-top: 6rem; padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .impact-header { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: start; margin-bottom: 3.5rem; }
+  .impact-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: white; line-height: 1.3; }
+  .impact-desc { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 400; }
 
+  .contribution-table-wrap { overflow-x: auto; width: 100%; border-radius: 8px; }
   .contribution-table {
-    width: 100%; border-collapse: collapse;
+    width: 100%; border-collapse: collapse; min-width: 600px;
     font-size: 0.95rem; background: rgba(255,255,255,0.02);
-    border-radius: 8px; overflow: hidden;
   }
-  .contribution-table thead tr {
-    border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);
-  }
+  .contribution-table thead tr { border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); }
   .contribution-table th {
     font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
     color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;
@@ -579,19 +545,12 @@
   }
   .contribution-table td {
     padding: 1.2rem 1.5rem; color: rgba(255,255,255,0.8);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-weight: 400;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 400;
   }
   .contribution-table tr:hover td { background: rgba(255,255,255,0.04); }
-  .contribution-table .hours {
-    font-family: var(--font-mono); font-weight: 600; color: var(--teal-light);
-    font-size: 1rem;
-  }
+  .contribution-table .hours { font-family: var(--font-mono); font-weight: 600; color: var(--teal-light); font-size: 1rem; }
 
-  .rewards-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
+  .rewards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
   .reward-card {
     background: rgba(13,115,119,0.08); border: 1px solid rgba(13,115,119,0.3);
     padding: 2rem; border-radius: 8px; transition: transform 0.3s ease;
@@ -604,11 +563,8 @@
   /* Application CTA */
   .application-cta {
     background: linear-gradient(135deg, rgba(13,115,119,0.2) 0%, rgba(255,255,255,0.02) 100%);
-    border: 1px solid rgba(13,115,119,0.4);
-    padding: 4rem 3rem;
-    border-radius: 12px;
-    margin-top: 4rem;
-    text-align: center;
+    border: 1px solid rgba(13,115,119,0.4); padding: 4rem 3rem;
+    border-radius: 12px; margin-top: 4rem; text-align: center;
   }
 
   /* ─── CONTACT / FOOTER ─── */
@@ -620,13 +576,11 @@
   }
   .footer-cta-eyebrow {
     font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;
-    color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
   }
   .footer-cta-title {
     font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em;
-    margin-bottom: 1.8rem;
+    font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem;
   }
   .footer-cta-title em { font-style: italic; color: var(--teal-light); }
   .footer-cta-sub {
@@ -650,19 +604,14 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem;
   }
-  .footer-logo-text {
-    font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
-    color: rgba(255,255,255,0.6);
-  }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.6); }
   .footer-bottom-links { display: flex; gap: 2.5rem; }
   .footer-bottom-links a {
     font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500;
     text-decoration: none; transition: color 0.3s ease;
   }
   .footer-bottom-links a:hover { color: white; }
-  .footer-copy {
-    font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400;
-  }
+  .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400; }
 
   /* ─── ANIMATIONS ─── */
   .fade-up {
@@ -670,12 +619,6 @@
     transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* ─── TABLET RESPONSIVENESS ─── */
-  @media (max-width: 1024px) {
-    .articles-grid { grid-template-columns: repeat(2, 1fr); }
-    .article-card.featured { grid-column: span 2; }
-  }
 
   /* ─── MOBILE RESPONSIVENESS (IMPROVED GRID REFLOW) ─── */
   @media (max-width: 900px) {
@@ -696,7 +639,7 @@
     
     .hamburger { display: flex; z-index: 101; }
 
-    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 100px; padding-bottom: 4rem; }
+    .hero { min-height: auto; padding-top: 100px; padding-bottom: 4rem; }
     .hero-left { padding: 2rem 2rem; text-align: center; align-items: center; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
@@ -704,22 +647,15 @@
     .container { padding: 0 2rem; }
     section { padding: 5rem 0; }
 
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem; }
+    .about-grid { gap: 3rem; margin-top: 3rem; }
     
-    .gvp-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .gvp-grid { gap: 3rem; text-align: center; }
     .gvp-grid .section-lead { margin-left: auto; margin-right: auto; }
     .gvp-grid .btn-primary { margin: 0 auto; }
     .gvp-grid > div:first-child > div[style*="display: flex"] { justify-content: center; flex-direction: column; }
     .gvp-card-shadow { top: 10px; right: -10px; }
-
-    .articles-grid { grid-template-columns: 1fr; }
-    .article-card.featured { grid-column: span 1; padding: 2rem; }
     
-    .roles-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .impact-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .rewards-grid { grid-template-columns: 1fr; }
-    
-    .contribution-table th, .contribution-table td { padding: 1rem; font-size: 0.85rem; }
+    .impact-header { gap: 1.5rem; }
     .application-cta { padding: 3rem 1.5rem; }
     
     .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
@@ -732,13 +668,11 @@
     nav.scrolled { padding: 0.8rem 1.5rem; }
     .container { padding: 0 1.5rem; }
     
-    .values-grid { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; width: 100%; }
     .btn-primary, .btn-outline { width: 100%; text-align: center; }
     
     .section-title { font-size: 2.2rem; }
     .footer-cta-title { font-size: 2rem; }
-    .contribution-table { display: block; overflow-x: auto; white-space: nowrap; }
   }
 </style>
 </head>
@@ -746,7 +680,7 @@
 
 <nav id="main-nav">
  <a href="#" class="nav-logo">
-    <img src="path/to/logo1.png" alt="Logo" class="logo-img">
+    <img src="ПУТЬ_К_ВАШЕМУ_ЛОГОТИПУ/logo1.png" alt="Logo" class="logo-img">
     Global Voice Insights
 </a>
   <div class="nav-overlay" id="nav-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 99; transition: opacity 0.3s; opacity: 0;"></div>
@@ -781,7 +715,9 @@
         <a href="#careers" class="btn-outline">Join the Team</a>
       </div>
     </div>
-  </section> <section class="about" id="about">
+  </section> 
+  
+  <section class="about" id="about">
     <div class="container">
       <div class="section-eyebrow fade-up">Why GVI</div>
       <h2 class="section-title fade-up">Diplomacy Is Not a<br><em>Closed Club.</em></h2>
@@ -977,7 +913,7 @@
       <h2 class="section-title fade-up">Our <em>Core Team</em> Members</h2>
       <div class="team-grid">
         <div class="team-card fade-up">
-        <img src="path/to/reand_photo.jpg" alt="Reand Baomar" loading="lazy" class="team-img">
+        <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/reand_photo.jpg" alt="Reand Baomar" loading="lazy" class="team-img">
           <div class="team-name">Reand Baomar</div>
           <div class="team-role">Researcher, Voice of GVI</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Reand Baomar on Instagram">
@@ -985,7 +921,7 @@
           </a>
         </div>
         <div class="team-card fade-up" style="transition-delay: 0.1s;">
-          <img src="path/to/adarsh_photo.jpg" alt="Adarsh Pujari" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/adarsh_photo.jpg" alt="Adarsh Pujari" loading="lazy" class="team-img">
           <div class="team-name">Adarsh Pujari</div>
           <div class="team-role">Researcher</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Adarsh Pujari on Instagram">
@@ -993,7 +929,7 @@
           </a>
         </div>
         <div class="team-card fade-up" style="transition-delay: 0.2s;">
-          <img src="path/to/omar_photo.jpg" alt="Omar Al-Fayed" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/omar_photo.jpg" alt="Omar Al-Fayed" loading="lazy" class="team-img">
           <div class="team-name">Omar Al-Fayed</div>
           <div class="team-role">MENA Correspondent</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Omar Al-Fayed on Instagram">
@@ -1001,7 +937,7 @@
           </a>
         </div>
         <div class="team-card fade-up volunteer" style="transition-delay: 0.3s;">
-          <img src="path/to/volunteer1.jpg" alt="Volunteer 1" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/volunteer1.jpg" alt="Volunteer 1" loading="lazy" class="team-img">
           <div class="team-name">Alex M.</div>
           <div class="team-role">GVI Volunteer</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
@@ -1009,7 +945,7 @@
           </a>
         </div>
         <div class="team-card fade-up volunteer" style="transition-delay: 0.4s;">
-          <img src="path/to/volunteer2.jpg" alt="Volunteer 2" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/volunteer2.jpg" alt="Volunteer 2" loading="lazy" class="team-img">
           <div class="team-name">Priya S.</div>
           <div class="team-role">GVI Volunteer</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
@@ -1017,7 +953,7 @@
           </a>
         </div>
         <div class="team-card fade-up volunteer" style="transition-delay: 0.5s;">
-          <img src="path/to/volunteer3.jpg" alt="Volunteer 3" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/volunteer3.jpg" alt="Volunteer 3" loading="lazy" class="team-img">
           <div class="team-name">Chen W.</div>
           <div class="team-role">GVI Volunteer</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
@@ -1025,7 +961,7 @@
           </a>
         </div>
         <div class="team-card fade-up volunteer" style="transition-delay: 0.6s;">
-          <img src="path/to/volunteer4.jpg" alt="Volunteer 4" loading="lazy" class="team-img">
+          <img src="ПУТЬ_К_ВАШЕМУ_ФОТО/volunteer4.jpg" alt="Volunteer 4" loading="lazy" class="team-img">
           <div class="team-name">Maria G.</div>
           <div class="team-role">GVI Volunteer</div>
           <a href="ТВОЯ_ССЫЛКА_НА_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="team-link" aria-label="Volunteer on Instagram">
@@ -1083,39 +1019,41 @@
           </div>
         </div>
 
-        <table class="contribution-table">
-          <thead>
-            <tr>
-              <th>Department</th>
-              <th>Deliverable (Task)</th>
-              <th>Official Hours</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Writer</td>
-              <td>Analytical Article (per 100 words)</td>
-              <td class="hours">2H</td>
-            </tr>
-            <tr>
-              <td>Editorial</td>
-              <td>Editing & Proofreading (per 500 words)</td>
-              <td class="hours">3H</td>
-            </tr>
-            <tr>
-              <td>Design</td>
-              <td>Social Media Slide / Infographic</td>
-              <td class="hours">3H</td>
-            </tr>
-            <tr>
-              <td>Design</td>
-              <td>Long-read Visual Branding / Layout</td>
-              <td class="hours">5H</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="contribution-table-wrap">
+          <table class="contribution-table">
+            <thead>
+              <tr>
+                <th>Department</th>
+                <th>Deliverable (Task)</th>
+                <th>Official Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Writer</td>
+                <td>Analytical Article (per 100 words)</td>
+                <td class="hours">2H</td>
+              </tr>
+              <tr>
+                <td>Editorial</td>
+                <td>Editing & Proofreading (per 500 words)</td>
+                <td class="hours">3H</td>
+              </tr>
+              <tr>
+                <td>Design</td>
+                <td>Social Media Slide / Infographic</td>
+                <td class="hours">3H</td>
+              </tr>
+              <tr>
+                <td>Design</td>
+                <td>Long-read Visual Branding / Layout</td>
+                <td class="hours">5H</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         
-        <div class="rewards-grid" style="margin-top: 3.5rem;">
+        <div class="rewards-grid">
           <div class="reward-card fade-up">
             <span class="reward-icon">🎓</span>
             <div class="reward-title">Official Certification</div>
