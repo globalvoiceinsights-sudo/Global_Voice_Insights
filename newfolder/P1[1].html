@@ -12,13 +12,12 @@
 <meta property="og:description" content="How different government structures handle global emergencies, balancing speed, trust, and transparency.">
 <meta property="og:image" content="logo1.png">
 <meta property="og:type" content="article">
-<meta property="og:url" content="logo1.png">
-
+<meta property="og:url" content="ВСТАВЬТЕ_ССЫЛКУ_НА_СТАТЬЮ_ЗДЕСЬ">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Analysis of Global Crisis Management & Government Systems — Global Voice Insights">
 <meta name="twitter:description" content="How different government structures handle global emergencies, balancing speed, trust, and transparency.">
-<meta name="twitter:image" content="ССЫЛКА_ЗДЕСЬ_НА_КАРТИНКУ">
+<meta name="twitter:image" content="ВСТАВЬТЕ_ПУТЬ_К_ВАШЕМУ_ФОТО_ЗДЕСЬ.jpg">
 
 <link rel="icon" type="image/png" href="logo1.png">
 
@@ -279,28 +278,27 @@
     position: relative;
   }
 
-  .article-cover .cover-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 1rem;
-    background: linear-gradient(135deg, var(--teal-pale) 0%, var(--gray-100) 100%);
-    color: var(--gray-300);
-  }
-  .article-cover .cover-placeholder svg {
-    width: 52px; height: 52px; stroke: var(--gray-300); fill: none; stroke-width: 1.5;
-  }
-  .article-cover .cover-placeholder span {
-    font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gray-300);
-  }
-
+  /* Стили для реального изображения обложки */
   .article-cover img {
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
 
   .cover-caption {
-    font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300);
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
     letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center;
+  }
+  
+  /* Стили для ссылки-источника фото */
+  .cover-caption a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--teal);
+    transition: all 0.2s ease;
+  }
+  
+  .cover-caption a:hover {
+    color: var(--green-deep);
+    border-bottom: 1px solid var(--green-deep);
   }
 
   /* ═══════════════════════════════════════════
@@ -370,16 +368,6 @@
     font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300);
     letter-spacing: 0.06em; margin-top: 0.7rem; text-align: center;
   }
-
-  .img-placeholder {
-    width: 100%; aspect-ratio: 16/9; border-radius: 8px;
-    background: linear-gradient(135deg, var(--teal-pale) 0%, var(--gray-100) 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.7rem; margin: 2.5rem 0;
-    border: 1px dashed var(--gray-300);
-  }
-  .img-placeholder svg { width: 40px; height: 40px; stroke: var(--gray-300); fill: none; stroke-width: 1.5; }
-  .img-placeholder span { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300); letter-spacing: 0.1em; text-transform: uppercase; }
 
   .article-tags {
     display: flex; flex-wrap: wrap; gap: 0.6rem;
@@ -505,6 +493,11 @@
 
     .article-hero-inner { padding: 4rem 2rem 3rem; }
     .article-cover-wrap { padding: 0 2rem; }
+    
+    /* Обновленная защита для картинок, чтобы не съезжали на планшетах */
+    .article-cover img, .article-prose figure img { max-width: 100%; height: auto; }
+    .article-cover { height: auto; aspect-ratio: 16/9; }
+
     .article-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; }
     .article-sidebar { position: static; }
     .container { padding: 0 2rem; }
@@ -557,7 +550,7 @@
       Back to Digest
     </a>
 
-    <div class="article-category fade-up">Diplomacy 101 </div>
+    <div class="article-category fade-up">Diplomacy 101</div>
 
     <h1 class="article-headline fade-up" style="transition-delay:0.1s;">
       Analysis of Global Crisis Management & <br><em>Government Systems</em>
@@ -587,12 +580,10 @@
 
 <div class="article-cover-wrap fade-up">
   <div class="article-cover">
-    <div class="cover-placeholder">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span>Cover Photo — Replace with &lt;img src="ССЫЛКА_ЗДЕСЬ_НА_ФОТО"&gt;</span>
-    </div>
+    <img src="ВСТАВЬТЕ_ПУТЬ_К_ВАШЕМУ_ФОТО_ЗДЕСЬ.jpg" alt="Article Cover">
   </div>
-  <p class="cover-caption">Photo: ССЫЛКА_ЗДЕСЬ_НА_ИСТОЧНИК</p>
+  
+  <p class="cover-caption">Photo: <a href="ВСТАВЬТЕ_ССЫЛКУ_НА_ИСТОЧНИК_ЗДЕСЬ" target="_blank" rel="noopener noreferrer">ВСТАВЬТЕ_НАЗВАНИЕ_ИСТОЧНИКА_ЗДЕСЬ</a></p>
 </div>
 
 <main>
@@ -692,19 +683,19 @@
         <div class="sidebar-block">
           <div class="sidebar-label">Related</div>
 
-          <a href="ССЫЛКА_ЗДЕСЬ" class="related-item">
+          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
             <div>
               <div class="related-item-title">The Architecture of the UN Security Council</div>
               <div class="related-item-cat">Diplomacy 101</div>
             </div>
           </a>
-          <a href="ССЫЛКА_ЗДЕСЬ" class="related-item">
+          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
             <div>
               <div class="related-item-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
               <div class="related-item-cat">Diplomacy 101</div>
             </div>
           </a>
-          <a href="ССЫЛКА_ЗДЕСЬ" class="related-item">
+          <a href="ВСТАВЬТЕ_ССЫЛКУ_ЗДЕСЬ" class="related-item">
             <div>
               <div class="related-item-title">The New Cold Architecture: Reshaping the Global Order</div>
               <div class="related-item-cat">Weekly Review</div>
