@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Global Geopolitical and Economic Assessment: A Comprehensive Report on the Week of April 13-19, 2026.">
+<meta name="theme-color" content="#0d7377">
+
+<meta property="og:title" content="Global Geopolitical and Economic Assessment — Global Voice Insights">
+<meta property="og:description" content="A comprehensive report on the week of April 13-19, 2026 covering geopolitical instability, economic consequences, and technological frontiers.">
+<meta property="og:image" content="[путь к фото обложки]">
+<meta property="og:type" content="article">
+<meta property="og:url" content="[ссылка здесь]">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Global Geopolitical and Economic Assessment — Global Voice Insights">
+<meta name="twitter:description" content="A comprehensive report on the week of April 13-19, 2026.">
+<meta name="twitter:image" content="[путь к фото обложки]">
+
+<link rel="icon" type="image/png" href="logo1.png">
+
+<title>Global Geopolitical and Economic Assessment — Global Voice Insights</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ═══════════════════════════════════════════
+     DESIGN TOKENS
+  ═══════════════════════════════════════════ */
+  :root {
+    --teal: #0d7377;
+    --teal-light: #14a085;
+    --teal-pale: #e8f5f4;
+    --teal-mid: #1a9e96;
+    --green-deep: #0b4f4e;
+    --white: #fafafa;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e4;
+    --gray-300: #b0b0a8;
+    --gray-500: #6b6b62;
+    --gray-700: #3d3d38;
+    --gray-900: #1a1a17;
+    --accent: #c9a84c;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--gray-900);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  nav.scrolled {
+    box-shadow: 0 4px 30px rgba(13,115,119,0.08);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 1rem 4rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+    color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
+    position: relative; z-index: 101;
+  }
+  .nav-logo img.logo-img { height: 35px; width: auto; display: block; object-fit: contain; }
+
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--gray-700);
+    text-decoration: none; transition: color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -4px; left: 0; background-color: var(--teal);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal); color: white !important;
+    padding: 0.6rem 1.6rem; border-radius: 4px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(13,115,119,0.2);
+  }
+  .nav-cta:hover { background: var(--green-deep) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,115,119,0.3); }
+
+  .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; z-index: 101; }
+  .hamburger span { display: block; width: 28px; height: 2px; background: var(--gray-700); transition: all 0.3s ease; border-radius: 2px; }
+  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--teal); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--teal); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .btn-primary, .btn-outline {
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block; letter-spacing: 0.02em;
+  }
+  .btn-primary { background: var(--teal); color: white; border: none; box-shadow: 0 4px 15px rgba(13,115,119,0.25); }
+  .btn-primary:hover { background: var(--green-deep); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(13,115,119,0.35); }
+
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── HERO ─── */
+  .article-hero { padding-top: 80px; position: relative; overflow: hidden; background: var(--gray-50); }
+  .article-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(var(--gray-100) 1px, transparent 1px), linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+    background-size: 60px 60px; opacity: 0.4;
+  }
+  .article-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 5rem 4rem 4rem; }
+  .article-breadcrumb {
+    display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; margin-bottom: 2.5rem; transition: gap 0.2s ease;
+  }
+  .article-breadcrumb:hover { gap: 0.8rem; }
+  .article-breadcrumb svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+  .article-category {
+    display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .article-category::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal); }
+  .article-headline { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; color: var(--gray-900); margin-bottom: 1.8rem; }
+  .article-headline em { font-style: italic; color: var(--teal); }
+  .article-deck { font-size: 1.15rem; line-height: 1.7; color: var(--gray-500); font-weight: 400; max-width: 640px; margin-bottom: 2.5rem; }
+  .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--gray-100); }
+  .article-meta-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--teal-pale); background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--teal); flex-shrink: 0;
+  }
+  .author-name { font-weight: 600; font-size: 0.95rem; color: var(--gray-700); }
+  .author-role { font-size: 0.78rem; color: var(--gray-300); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
+  .meta-divider { width: 1px; height: 32px; background: var(--gray-100); }
+  .meta-item { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ─── COVER & BODY ─── */
+  .article-cover-wrap { max-width: 860px; margin: 0 auto 0; padding: 0 4rem; position: relative; z-index: 2; }
+  .article-cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--gray-100); box-shadow: 0 20px 60px rgba(13,115,119,0.12); position: relative; }
+  .article-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover-caption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300); letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center; }
+
+  .article-body-wrap { padding: 5rem 0 8rem; }
+  .article-layout { max-width: 860px; margin: 0 auto; padding: 0 4rem; display: grid; grid-template-columns: 1fr 240px; gap: 5rem; align-items: start; }
+  
+  .article-prose { min-width: 0; }
+  .article-prose p { font-size: 1.08rem; line-height: 1.85; color: var(--gray-700); font-weight: 400; margin-bottom: 1.8rem; }
+  .article-prose ul, .article-prose ol { margin-bottom: 1.8rem; padding-left: 1.5rem; color: var(--gray-700); line-height: 1.85; font-size: 1.08rem; }
+  .article-prose li { margin-bottom: 0.5rem; }
+  .article-prose h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--gray-900); line-height: 1.2; letter-spacing: -0.02em; margin: 3rem 0 1.2rem; }
+  .article-prose h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 2.5rem 0 1rem; }
+  .article-prose strong { color: var(--teal); font-weight: 600; }
+  .article-prose a { color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,115,119,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+  .article-prose a:hover { text-decoration-color: var(--teal); }
+  
+  /* Table Styling */
+  .article-prose table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.95rem; text-align: left; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .article-prose th { background: var(--teal-pale); color: var(--teal); padding: 1.2rem 1rem; font-family: var(--font-mono); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; border-bottom: 2px solid var(--teal); }
+  .article-prose td { padding: 1rem; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
+  .article-prose tr:last-child td { border-bottom: none; }
+  .article-prose tr:hover td { background: var(--gray-50); }
+
+  /* ─── SIDEBAR & FOOTER ─── */
+  .article-sidebar { position: sticky; top: 110px; }
+  .sidebar-block { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 8px; padding: 1.8rem; margin-bottom: 1.5rem; }
+  .sidebar-label { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+  .sidebar-label::before { content: ''; display: inline-block; width: 16px; height: 2px; background: var(--teal); }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.7rem; }
+  .toc-list a { font-size: 0.875rem; color: var(--gray-500); text-decoration: none; line-height: 1.4; transition: color 0.2s; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .toc-list a::before { content: '–'; color: var(--gray-300); flex-shrink: 0; margin-top: 1px; }
+  .toc-list a:hover { color: var(--teal); }
+  .related-item { display: flex; gap: 0.8rem; text-decoration: none; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-100); }
+  .related-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .related-item-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: var(--gray-900); line-height: 1.4; transition: color 0.2s; }
+  .related-item:hover .related-item-title { color: var(--teal); }
+  .related-item-cat { font-family: var(--font-mono); font-size: 0.65rem; color: var(--gray-300); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+
+  .footer-section { background: var(--green-deep); padding: 6rem 0 0; }
+  .footer-cta-wrap { text-align: center; padding-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-cta-eyebrow { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .footer-cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem; }
+  .footer-cta-title em { font-style: italic; color: var(--teal-light); }
+  .footer-cta-sub { font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 540px; margin: 0 auto 3rem; line-height: 1.7; font-weight: 400; }
+  .footer-contact { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 3rem; }
+  .contact-item { display: flex; align-items: center; gap: 0.8rem; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease; }
+  .contact-item:hover { color: white; }
+  .contact-item svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.6); }
+  .footer-bottom-links { display: flex; gap: 2.5rem; }
+  .footer-bottom-links a { font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
+  .footer-bottom-links a:hover { color: white; }
+  .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; } nav.scrolled { padding: 1rem 2rem; }
+    .nav-links { position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px; background: var(--white); flex-direction: column; justify-content: center; padding: 3rem; gap: 2.5rem; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); box-shadow: -10px 0 40px rgba(13,115,119,0.1); z-index: 100; }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 1.2rem; } .nav-links a:not(.nav-cta)::after { display: none; }
+    .hamburger { display: flex; }
+    .article-hero-inner { padding: 4rem 2rem 3rem; } .article-cover-wrap { padding: 0 2rem; } .article-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; } .article-sidebar { position: static; } .container { padding: 0 2rem; }
+    .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 2rem; } .footer-bottom-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.5rem; } .article-hero-inner { padding: 3.5rem 1.5rem 2.5rem; } .article-cover-wrap { padding: 0 1.5rem; } .article-layout { padding: 0 1.5rem; } .container { padding: 0 1.5rem; } .article-headline { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo1.png" alt="Logo" class="logo-img">
+    Global Voice Insights
+  </a>
+  <div class="nav-overlay" id="nav-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:99; transition:opacity 0.3s; opacity:0;"></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">Why GVI</a></li>
+    <li><a href="index.html#hub">Digest</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#careers">Join Us</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <a href="index.html#hub" class="article-breadcrumb fade-up">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Digest
+    </a>
+    <div class="article-category fade-up">Weekly Review</div>
+    <h1 class="article-headline fade-up" style="transition-delay:0.1s;">
+      Global Geopolitical and Economic Assessment
+    </h1>
+    <p class="article-deck fade-up" style="transition-delay:0.2s;">
+      A Comprehensive Report on the Week of April 13-19, 2026.
+    </p>
+    <div class="article-meta fade-up" style="transition-delay:0.3s;">
+         <img src="logo1.png" alt="Logo" class="logo-img">
+        <div>
+          <div class="author-name">GVI Analyst</div>
+          <div class="author-role">Writer · GVI</div>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">19 April 2026</div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">8 min read</div>
+    </div>
+  </div>
+</header>
+
+<div class="article-cover-wrap fade-up">
+  <div class="article-cover">
+    <img src="[путь к фото обложки]" alt="Global Geopolitical and Economic Assessment">
+  </div>
+  <p class="cover-caption">Photo: [Описание фото или кредит] · Source</p>
+</div>
+
+<main>
+  <div class="article-body-wrap">
+    <div class="article-layout">
+
+      <article class="article-prose fade-up">
+
+        <p>The week of April 13 to April 19, 2026, represents a transformative period in modern history, characterized by a sharp divergence between escalating military confrontation and significant diplomatic and scientific breakthroughs.</p>
+        
+        <p>The global landscape is currently navigating the "Shadow of War," as defined by the International Monetary Fund, where the stability of the global energy market and the integrity of international maritime trade are being tested by a high-stakes naval blockade in the Middle East.</p>
+        
+        <p>Simultaneously, the restorative power of democratic processes has been evidenced by a landmark election in Central Europe, while the boundaries of human knowledge and capability have been pushed forward by revolutionary medical discoveries and the successful return of the first crewed lunar mission in half a century.</p>
+        
+        <p>This report provides an exhaustive analysis of these developments, weaving together the disparate threads of geopolitical risk, macroeconomic shifts, and scientific progress into a cohesive narrative for professional assessment.</p>
+
+        <h2 id="section-1">Geopolitical Instability and the Crisis of Maritime Sovereignty</h2>
+
+        <p>The primary driver of global risk this week has been the collapse of diplomatic engagement between the United States and Iran, leading to a direct challenge to the freedom of navigation in the Strait of Hormuz. The failure of the 21-hour peace negotiations in Islamabad, led by U.S. Vice President J.D. Vance, signaled the end of a fragile two-week ceasefire and the commencement of a period of maximalist economic pressure.</p>
+
+        <p>The core of the disagreement remains the Iranian nuclear program, with the U.S. delegation reporting a total lack of affirmative commitment from Tehran to cease its pursuit of nuclear weapons capabilities. In response to this diplomatic impasse, President Donald Trump ordered a comprehensive naval blockade of Iranian ports and the Strait of Hormuz.</p>
+
+        <p>This directive represents a fundamental shift in maritime policy, instructing the U.S. Navy to interdict and search any vessel in international waters that has paid what the administration deems an "illegal toll" to Iranian authorities for passage through the Strait. The move is designed to strip Tehran of a critical revenue stream and reassert international control over a waterway that has functionally operated as an Iranian-controlled bottleneck for several years.</p>
+
+        <p>The operational impact of this blockade was immediate and severe. Traffic through the Strait of Hormuz, which typically sees nearly 100 ships per day, plummeted to an average of just six vessels per day as the blockade took effect. This 94% reduction in traffic has stranded millions of barrels of oil at sea, with quantities of oil currently "on water" estimated to be 38 times pre-war levels. The International Maritime Organization has expressed grave concern, arguing that the imposition of tolls by Iran and the subsequent blockade by the United States set a dangerous precedent for the governance of global trade routes.</p>
+
+        <h2 id="section-2">The Economic Consequences of Energy Market Dislocation</h2>
+
+        <p>The disruption of the Strait of Hormuz has triggered the most acute energy price spike since the early 21st century. As the blockade moved from declaration to enforcement, oil prices surged past the $100 per barrel mark, with Brent crude futures trading at $100.07. However, the physical market has shown even greater volatility; spot crude benchmarks have outpaced futures, with North Sea Dated crude trading as high as $130 per barrel—$60 above pre-conflict levels and some physical prices approaching $150 per barrel.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Energy Metric</th>
+              <th>February 2026 (Baseline)</th>
+              <th>April 13-19, 2026 (Peak)</th>
+              <th>Percentage Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brent Crude Price (Futures)</td>
+              <td>~$70/bbl</td>
+              <td>$100.07/bbl</td>
+              <td>+42.9%</td>
+            </tr>
+            <tr>
+              <td>Physical Crude Oil Price</td>
+              <td>~$70/bbl</td>
+              <td>$130-$150/bbl</td>
+              <td>+85.7% to +114.3%</td>
+            </tr>
+            <tr>
+              <td>Singapore Middle Distillate</td>
+              <td>Standard</td>
+              <td>$290/bbl</td>
+              <td>All-time high</td>
+            </tr>
+            <tr>
+              <td>Strait of Hormuz Oil Loadings</td>
+              <td>~20 mb/d</td>
+              <td>~3.8 mb/d</td>
+              <td>-81.0%</td>
+            </tr>
+            <tr>
+              <td>Global Oil Demand Forecast</td>
+              <td>Standard</td>
+              <td>-800 kb/d (March)</td>
+              <td>Contraction</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The International Energy Agency (IEA) has revised its global outlook significantly, projecting a second-quarter decline in fuel consumption of 1.5 million barrels per day—the sharpest drop since the COVID-19 pandemic. While alternative routes, such as the Trans-Anatolian and Saudi west-coast pipelines, have increased their throughput to 7.2 million barrels per day, they remain incapable of filling the 13 million barrel per day gap created by the Hormuz closure.</p>
+
+        <p>This scarcity has forced Asian petrochemical producers to curtail operations and has led to widespread flight cancellations across Europe and the Middle East as jet fuel supplies dry up.</p>
+
+        <h2 id="section-3">Regional Conflict Management: The Israel-Lebanon Ceasefire</h2>
+
+        <p>Amidst the broader regional escalation, a significant diplomatic success was achieved on the Levantine front. Following direct talks at the U.S. State Department, Israel and Lebanon agreed to an initial 10-day ceasefire, effective April 16, 2026. This "cessation of hostilities" was brokered by the United States and is intended to serve as a bridge toward a permanent security and peace agreement.</p>
+
+        <p>The terms of the agreement are unprecedented in their scope and requirements for the Lebanese state. Most notably, the deal emphasizes that Lebanon's official security forces—including the Lebanese Armed Forces (LAF) and various national police entities—must have exclusive responsibility for the country's sovereignty and national defense. This provision is a direct reference to a concerted effort to disarm Hezbollah and other non-state armed groups that the agreement identifies as threats to regional stability.</p>
+
+        <p>Key pillars of the 10-day ceasefire include:</p>
+        <ol>
+          <li><strong>Mutual Recognition:</strong> Both nations agreed to full recognition of each other's sovereignty and territorial integrity, explicitly stating they are "not at war".</li>
+          <li><strong>Defensive Restraint:</strong> Israel has committed to halting offensive military operations against Lebanese civilian, military, and state targets by land, air, and sea.</li>
+          <li><strong>Inherent Right to Self-Defense:</strong> Crucially, Israel maintains its right to take "all necessary measures" in self-defense against any planned, imminent, or ongoing attacks.</li>
+          <li><strong>Lebanese Responsibility:</strong> With international support, the Lebanese government is expected to take "meaningful steps" to prevent Hezbollah from launching attacks or regrouping.</li>
+        </ol>
+
+        <p>While the ceasefire has brought a "fragile calm" to Beirut and southern Lebanon, the human and physical costs of the preceding seven weeks of conflict are staggering. More than 2,000 people have been killed in Lebanon, including at least 172 children. As displaced families began the journey back to southern villages like Jibsheet and the Dahiyeh suburb of Beirut, they were met with scenes of total devastation: flattened apartment blocks, destroyed infrastructure, and the severance of the last bridge over the Litani River.</p>
+
+        <p>Furthermore, the deal does not yet require the withdrawal of Israeli forces, who currently occupy approximately 10% of Lebanese territory. The longevity of this truce remains uncertain. Lebanese residents have expressed skepticism, noting that a 10-day window is insufficient for reconstruction or a true return to normalcy. The ability of the Lebanese government to actually assert control over Hezbollah—a group that remains loyal to its Iranian backers and continues to fly its flags over the rubble of its destroyed headquarters—is the central variable upon which the permanent peace talks will depend.</p>
+
+        <h2 id="section-4">European Union: Democratic Renewal and Defense Integration</h2>
+
+        <p>In the European theater, the week was defined by a historic electoral shift in Hungary and a substantial reinforcement of the Union's collective defense capabilities. These events suggest a period of internal consolidation and a hardening of the EU's geopolitical posture in response to the Middle Eastern energy shock.</p>
+
+        <h3>The Ousting of the Orban Administration</h3>
+        <p>After 16 years of nationalist rule under Prime Minister Viktor Orban, the Hungarian electorate has decisively chosen a different path. The legislative elections held on April 12 saw the victory of Peter Magyar and his Tisza party, which is projected to secure more than two-thirds of the 199 parliamentary seats. This result has been widely interpreted as a "landmark election" that could fundamentally re-anchor Hungary within the European project.</p>
+        <p>European Commission President Ursula von der Leyen welcomed the result, stating that "Hungary has chosen Europe". This sentiment was echoed by Ukrainian President Volodymyr Zelenskyy, who noted that Ukraine is ready to advance cooperation with Budapest—a stark contrast to the frequently obstructionist relationship maintained under Orban. The shift in Hungary is expected to simplify EU decision-making processes regarding aid to Ukraine and internal rule-of-law standards, potentially ending years of diplomatic gridlock.</p>
+
+        <h3>Defense Readiness and Strategic Investments</h3>
+        <p>The European Commission has intensified its focus on security, announcing a €1.07 billion investment in 57 new defense projects under the 2025 European Defense Fund (EDF). This funding is a critical component of the "Defense Readiness Roadmap 2030" and targets four major "flagship" initiatives:</p>
+        <ul>
+          <li><strong>European Drone Defense Initiative:</strong> Developing integrated systems to counter unmanned aerial threats.</li>
+          <li><strong>Eastern Flank Watch:</strong> Strengthening surveillance and early-warning systems along the EU's eastern borders.</li>
+          <li><strong>European Air Shield:</strong> Aiming for a comprehensive, multi-layered air defense architecture.</li>
+          <li><strong>European Space Shield:</strong> Securing critical space-based assets and communications.</li>
+        </ul>
+
+        <p>A notable aspect of this investment is the deepening integration with the Ukrainian defense industry. "Project STRATUS," an initiative to develop an AI-powered cyber defense system for drone swarms, includes a Ukrainian subcontractor to ensure the incorporation of direct battlefield experience into the technology. Additionally, the EU is moving to support its own industrial base, with 38% of project participants being small and medium-sized enterprises (SMEs), receiving over 21% of the total funding.</p>
+        <p>However, these strategic gains are being offset by the rising cost of the Middle East conflict. President von der Leyen reported that the EU's fossil fuel bill has increased by €22 billion since the outbreak of hostilities involving Iran. This has prompted the introduction of the "CBAM compensation" proposal by Pascal Canfin, which suggests a temporary decarbonization fund to help European industries navigate the fuel disruption without abandoning their environmental targets.</p>
+
+        <h2 id="section-5">Global Macroeconomic Assessment: The Shadow of War</h2>
+
+        <p>The IMF and World Bank Spring Meetings in Washington, D.C., provided a comprehensive, if sobering, overview of the global economic state. The "World Economic Outlook" for April 2026, titled "Global Economy in the Shadow of War," highlights how geopolitical fragmentation and energy market dislocations are testing the resilience of the post-pandemic recovery.</p>
+
+        <h3>Growth and Inflation Forecasts</h3>
+        <p>The IMF has revised its global growth projections downward to 3.1% for 2026, a 0.2 percentage point decrease from the January update. This slowdown is particularly pronounced in emerging market and developing economies (EMDEs), which are more vulnerable to commodity price shocks and tighter financial conditions. Inflation is expected to rise modestly to 4.4% in 2026 before resuming its decline in 2027.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Economic Indicator</th>
+              <th>2025 (Actual)</th>
+              <th>2026 (Projected)</th>
+              <th>2027 (Projected)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Global GDP Growth</td>
+              <td>3.4%</td>
+              <td>3.1%</td>
+              <td>3.2%</td>
+            </tr>
+            <tr>
+              <td>Global Headline Inflation</td>
+              <td>4.0%</td>
+              <td>4.4%</td>
+              <td>3.7%</td>
+            </tr>
+            <tr>
+              <td>Advanced Economy Growth</td>
+              <td>1.8%</td>
+              <td>1.8%</td>
+              <td>1.8%</td>
+            </tr>
+            <tr>
+              <td>EMDE Growth</td>
+              <td>4.1%</td>
+              <td>3.9%</td>
+              <td>4.1%</td>
+            </tr>
+            <tr>
+              <td>South Asia GDP Growth</td>
+              <td>7.0%</td>
+              <td>6.3%</td>
+              <td>6.9%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The "Shadow of War" theme is not merely metaphorical; Chapter 3 of the IMF report notes that armed conflicts generate large and persistent output losses in the economies where fighting occurs, often exceeding the damage caused by financial crises or natural disasters. The "scars" of these conflicts include long-term capital and productivity losses that persist even after peace is achieved.</p>
+
+        <h3>The Macroeconomics of Defense Spending Booms</h3>
+        <p>A significant portion of the IMF analysis was dedicated to the rising trend of defense spending. As geopolitical tensions intensify, many nations are engaging in "defense spending booms," where outlays typically increase by 2.7 percentage points of GDP over a 30-month period. While these expenditures can provide a short-term boost to economic activity, the medium-term trade-offs are severe:</p>
+        <ul>
+          <li><strong>Fiscal Deterioration:</strong> Fiscal deficits tend to worsen by about 2.6 percentage points of GDP.</li>
+          <li><strong>Public Debt Hikes:</strong> Public debt increases by approximately 7 percentage points within three years. In active "wartime booms," this jump can be as high as 14 percentage points.</li>
+          <li><strong>Social Spending Displacement:</strong> Increased military budgets often result in a reduction of social spending, which in turn risks igniting social discontent and instability.</li>
+        </ul>
+        <p>In South Asia, growth remains the fastest in the EMDE category, driven primarily by India's robust domestic demand and recent free trade agreements with the EU and UK. However, even this region is facing headwinds from energy market dislocations, leading to a surge in gold demand as a safe-haven asset among Asian institutional investors.</p>
+
+        <h2 id="section-6">Scientific and Technological Frontiers: The 2026 Breakthrough Prizes</h2>
+
+        <p>In a profound contrast to the week's geopolitical strife, the scientific community celebrated a series of revolutionary achievements. The 2026 Breakthrough Prizes, announced on April 18, awarded six $3 million prizes for discoveries that significantly expand the growth of human knowledge in the life sciences, physics, and mathematics.</p>
+
+        <h3>Revolutionary Gene Therapies</h3>
+        <p>The Breakthrough Prize in Life Sciences was awarded to two teams whose work has effectively moved gene therapy from a theoretical possibility to a life-changing reality for thousands of patients.</p>
+        <ol>
+          <li><strong>Curing Blindness:</strong> Jean Bennett, Katherine A. High, and Albert Maguire were honored for developing the first FDA-approved gene replacement therapy. Their treatment targets Leber congenital amaurosis, a rare genetic retinal disease that usually results in total blindness by early adulthood. By delivering a functional version of the RPE65 gene using a viral vector, they have enabled children who were going blind to attend regular schools and regain their independence.</li>
+          <li><strong>Treating Blood Disorders:</strong> Stuart H. Orkin and Swee Lay Thein were recognized for transforming sickle cell disease and beta-thalassemia into treatable conditions. Thein's identification of the BCL11A gene as the key regulator of fetal hemoglobin production, combined with Orkin's proof that silencing this gene could mitigate disease symptoms, led directly to the approval of Casgevy—the first CRISPR-based medicine for any human disease.</li>
+          <li><strong>Neurodegenerative Disease Mapping:</strong> Rosa Rademakers and Bryan Traynor were recognized for discovering that a mutation in the C9orf72 gene is the most common genetic cause of both ALS and frontotemporal dementia, linking these two devastating disorders on a single disease spectrum.</li>
+        </ol>
+
+        <h3>Physics and the Standard Model</h3>
+        <p>The Breakthrough Prize in Fundamental Physics was awarded to the Muon g-2 collaborations. This prize recognizes decades of work across CERN, Brookhaven, and Fermilab to measure the "anomalous magnetic moment of the muon" with an incredible precision of 127 parts per billion. This measurement is one of the most rigorous tests of the Standard Model of particle physics; any deviation from the predicted value serves as a probe for "new physics"—undiscovered particles or forces that may exist beyond our current understanding.</p>
+        <p>Additionally, the world of mathematics saw Frank Merle honored for his contributions to nonlinear evolution equations. His work focuses on how waves and fluids change over time and the conditions under which these mathematical systems can "blow up" or become infinite in finite time, a critical concept for understanding natural phenomena ranging from rogue waves to black hole formation.</p>
+
+        <h2 id="section-7">Space Exploration: The Artemis II Milestone and the New Lunar Race</h2>
+
+        <p>The week also saw the triumphant conclusion of the Artemis II mission, the first crewed flight around the Moon since Apollo 17 in 1972. The Orion spacecraft, named "Integrity," splashed down in the Pacific Ocean on April 10, 2026, marking a perfect "bullseye" return after a 10-day journey.</p>
+
+        <h3>Mission Achievements and Records</h3>
+        <p>Artemis II was a mission of inclusion and record-breaking achievement. The four-person crew—Commander Reid Wiseman, Pilot Victor Glover, and Mission Specialists Christina Koch and Jeremy Hansen—carried out a complex lunar flyby that tested the limits of the Space Launch System (SLS) and the Orion capsule.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Artemis II Parameter</th>
+              <th>Value/Statistic</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Splashdown Date</td>
+              <td>April 10, 2026</td>
+              <td>Historic return to Earth</td>
+            </tr>
+            <tr>
+              <td>Mission Duration</td>
+              <td>9 days, 1 hour, 32 minutes</td>
+              <td>Validated long-duration systems</td>
+            </tr>
+            <tr>
+              <td>Distance Traveled</td>
+              <td>700,237 miles (1,126,922 km)</td>
+              <td>Farthest humans from Earth</td>
+            </tr>
+            <tr>
+              <td>Crew Records</td>
+              <td>First woman, person of color, non-US citizen</td>
+              <td>Expanded the "human" in exploration</td>
+            </tr>
+            <tr>
+              <td>Lunar Closest Approach</td>
+              <td>April 6, 2026 (4,067 miles)</td>
+              <td>Provided high-res data for landings</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The success of Artemis II has ignited "Moon joy" globally, but it also highlights the growing competition between the United States and China. While NASA aims to land humans on the lunar surface within the next two years using SpaceX's Starship or Blue Origin's Blue Moon lander—both of which are currently facing schedule delays—China is targeting a 2030 crewed landing. China's strategy utilizes two Long March-10 rockets to launch the crew and lander separately, avoiding the complex in-orbit refueling required by the current U.S. plan.</p>
+
+        <h2 id="section-8">Global South Diplomacy and the Energy Transition</h2>
+
+        <p>The week of April 13 saw a significant push for new diplomatic frameworks in the Global South, focusing on trade, critical minerals, and the transition away from fossil fuels.</p>
+
+        <h3>The Santa Marta Conference</h3>
+        <p>In Santa Marta, Colombia, a groundbreaking conference was convened by the governments of Colombia and the Netherlands. This was the first international conference dedicated specifically to a "Just Transition Away from Fossil Fuels". Operating outside the traditional UNFCCC consensus-based structures, the conference aimed to kickstart the development of a "Fossil Fuel Non-Proliferation Treaty".</p>
+        <p>The conference outcomes, supported by the "Belém Declaration," emphasized that current global conflicts are fundamentally fueled by a "thirst for fossil fuel revenues". The participating nations argued that coordinated international cooperation is essential to prevent "disorderly phase-outs" that could destabilize economies and exacerbate energy inequality.</p>
+
+        <h3>Strategic Partnerships: South Korea, Brazil, and Vietnam</h3>
+        <p>In East Asia and South America, bilateral relations reached new heights:</p>
+        <ul>
+          <li><strong>South Korea and Brazil:</strong> President Lee Jae Myung and President Lula da Silva elevated their bilateral ties to a "Strategic Partnership". Their 2026-2029 Action Plan focuses on food security, critical minerals, and the energy transition.</li>
+          <li><strong>Vietnam and China:</strong> President To Lam chose China as his first overseas destination in his dual capacity as General Secretary and President. The visit resulted in 32 cooperation agreements, with a heavy emphasis on "hard connectivity" via the Lao Cai-Hanoi-Haiphong standard-gauge railway and "soft connectivity" through enhanced trade and customs alignment.</li>
+        </ul>
+
+        <h2 id="section-9">Humanitarian Crises and Human Rights: A Global Summary</h2>
+
+        <p>While high-level diplomacy and science advanced, the humanitarian situation in several of the world's most vulnerable regions continued to deteriorate. The International Rescue Committee's (IRC) 2026 report identified 20 countries at greatest risk, accounting for 89% of global humanitarian need despite representing only 12% of the world's population.</p>
+
+        <h3>The 2026 Crisis Watchlist</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Primary Threat in 2026</th>
+              <th>Humanitarian Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sudan</td>
+              <td>Continued Civil War</td>
+              <td>World's deadliest conflict; widespread hunger</td>
+            </tr>
+            <tr>
+              <td>Occupied Palestinian Territory</td>
+              <td>Total destruction of basic life conditions</td>
+              <td>Two years of conflict have decimated services</td>
+            </tr>
+            <tr>
+              <td>Democratic Republic of Congo</td>
+              <td>Failure of 2025 Peace Agreement</td>
+              <td>Escalating M23 violence; major cholera outbreak</td>
+            </tr>
+            <tr>
+              <td>Myanmar</td>
+              <td>Airstrikes and funding shortfalls</td>
+              <td>Millions stranded by conflict and natural shocks</td>
+            </tr>
+            <tr>
+              <td>Lebanon</td>
+              <td>Economic failure and displacement</td>
+              <td>Hostilities have displaced hundreds of thousands</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The United Nations has warned that in Gaza, thousands of patients still require urgent medical care that is unavailable due to restrictions on equipment and essential items. In Africa, the African Road Safety Charter has finally moved to replace vague guidelines with legally-binding laws aimed at halving road deaths by 2030, a critical step for a continent where road fatalities have remained stubbornly high.</p>
+
+        <h3>Positive Developments and Environmental Successes</h3>
+        <p>Despite the prevailing gloom in humanitarian circles, several "good news" milestones were achieved this week:</p>
+        <ul>
+          <li><strong>HIV Cure:</strong> A stem cell transplant in Berlin has led to the seventh documented cure of HIV in history.</li>
+          <li><strong>Conservation Triumphs:</strong> Brazil's blue-and-yellow macaws have returned to Rio after 200 years thanks to an ambitious "refaunation" project. In Uganda, mountain gorillas are no longer considered critically endangered following successful community-based conservation efforts.</li>
+          <li><strong>Renewable Energy Records:</strong> Sunny spring weather has brought new solar records to the United Kingdom, while Portugal has introduced a new deposit system to tackle its historically low recycling rates.</li>
+          <li><strong>Legal Protections:</strong> Colorado enacted the first law in the U.S. banning arrests based solely on colorimetric drug tests, which have a high rate of false positives.</li>
+        </ul>
+
+        <h2 id="section-10">Synthesis and Strategic Outlook</h2>
+
+        <p>The week of April 13-19, 2026, illustrates the profound complexity of the current global environment. The world is witnessing a "Geopolitical Divergence," where the mechanisms of traditional great-power diplomacy are failing in the Middle East, yet succeeding in stabilizing Central Europe and deepening South-South integration.</p>
+
+        <p>The U.S. naval blockade of the Strait of Hormuz is the most significant immediate threat to global stability. If the 10-day ceasefire in Lebanon does not expand into a broader regional de-escalation involving Iran, the energy scarcity and subsequent demand destruction projected by the IEA could lead to a global recession in the latter half of 2026. The "Shadow of War" is not just a risk to growth; it is a direct driver of public debt and social unrest, particularly in economies already burdened by high interest rates and eroded fiscal buffers.</p>
+
+        <div class="pull-quote">
+          <p>"The challenge for the international community will be to ensure that technological and scientific 'Moon joys' are not eclipsed by volatile supply shocks and geopolitical conflicts."</p>
+        </div>
+
+        <p>However, the long-term outlook is colored by the "Restorative Triumphs" of science and democratic resilience. The ousting of Orban in Hungary and the revolutionary successes in gene therapy and mathematics suggest that the foundational institutions of knowledge and governance are still capable of producing systemic improvements. As humans move from being "Moon-bound" history-makers to lunar-present inhabitants, the challenge for the international community will be to ensure that these technological and scientific "Moon joys" are not eclipsed by the volatile supply shocks and geopolitical conflicts that currently define the global landscape.</p>
+
+        <p>The strategic priority for the coming week must be the conversion of the fragile Israel-Lebanon truce into a permanent peace and the restoration of freedom of navigation in the Strait of Hormuz. Without these two elements, the scientific and democratic gains of the current week risk being overwhelmed by the macroeconomic costs of a prolonged energy crisis.</p>
+
+        <div class="article-tags">
+          <span class="article-tag">Geopolitics</span>
+          <span class="article-tag">Economy</span>
+          <span class="article-tag">Weekly Review</span>
+          <span class="article-tag">Analysis</span>
+          <span class="article-tag">Diplomacy</span>
+        </div>
+
+      </article>
+
+      <aside class="article-sidebar fade-up" style="transition-delay:0.15s;">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contents</div>
+          <ul class="toc-list">
+            <li><a href="#section-1">Crisis of Maritime Sovereignty</a></li>
+            <li><a href="#section-2">Energy Market Dislocation</a></li>
+            <li><a href="#section-3">Israel-Lebanon Ceasefire</a></li>
+            <li><a href="#section-4">EU Democratic Renewal</a></li>
+            <li><a href="#section-5">Global Macroeconomic Assessment</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sidebar-label">Related</div>
+          <a href="p1" class="related-item">
+            <div>
+              <div class="related-item-title">The New Cold Architecture: How Great Power Competition Is Reshaping the Global Order</div>
+              <div class="related-item-cat">Weekly Review</div>
+            </div>
+          </a>
+          <a href="p2.html" class="related-item">
+            <div>
+              <div class="related-item-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
+              <div class="related-item-cat">Diplomacy 101</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align:center; margin-top:0.5rem;">
+          <a href="index.html#careers" class="btn-primary" style="width:100%; display:block; text-align:center;">Join the Team</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer-section" id="contact">
+  <div class="container">
+    <div class="footer-cta-wrap fade-up">
+      <div class="footer-cta-eyebrow">Global Voice Insights</div>
+      <h2 class="footer-cta-title">Don't just watch history happen<br>— <em>help us write it.</em></h2>
+      <p class="footer-cta-sub">
+        Whether you're a reader, a writer, or a designer — there's a place for your voice at GVI. The world is complex. Let's make sense of it together.
+      </p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="index.html#careers" class="btn-primary">Join the Team</a>
+      </div>
+
+      <div class="footer-contact">
+        <a href="mailto:globalvoiceinsights@gmail.com" class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          globalvoiceinsights@gmail.com
+        </a>
+        <a href="https://www.instagram.com/global_voice_insight?igsh=MTNhbndwM2JjbGV2dg==" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @Global_Voice_Insights
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom fade-up">
+      <div class="footer-logo-text">Global Voice Insights</div>
+      <div class="footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#hub">Digest</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#careers">Join Us</a>
+      </div>
+      <div class="footer-copy">© 2026 Global Voice Insights. Youth-Led. Globally Minded.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  const overlay   = document.getElementById('nav-overlay');
+
+  function toggleMenu(forceClose) {
+    const isOpen = navLinks.classList.contains('open');
+    if (forceClose === true || isOpen) {
+      navLinks.classList.remove('open'); hamburger.classList.remove('active'); hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = ''; overlay.style.opacity = '0'; setTimeout(() => overlay.style.display = 'none', 300);
+    } else {
+      navLinks.classList.add('open'); hamburger.classList.add('active'); hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; overlay.style.display = 'block'; setTimeout(() => overlay.style.opacity = '1', 10);
+    }
+  }
+
+  hamburger.setAttribute('aria-expanded', 'false'); hamburger.setAttribute('aria-controls', 'nav-links');
+  hamburger.addEventListener('click', () => toggleMenu()); overlay.addEventListener('click', () => toggleMenu(true));
+  navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => toggleMenu(true)); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && navLinks.classList.contains('open')) toggleMenu(true); });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+    });
+  }, { rootMargin: '0px', threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
