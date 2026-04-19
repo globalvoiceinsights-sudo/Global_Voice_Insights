@@ -234,11 +234,22 @@
   @media (max-width: 600px) {
     nav { padding: 1rem 1.5rem; } .article-hero-inner { padding: 3.5rem 1.5rem 2.5rem; } .article-cover-wrap { padding: 0 1.5rem; } .article-layout { padding: 0 1.5rem; } .container { padding: 0 1.5rem; } .article-headline { font-size: 2.2rem; }
   }
-  /* Временный код для отладки — заставляет всё проявиться */
+/* Если через 3 секунды скрипт не сработал, показываем всё принудительно */
+@keyframes backup-show {
+  from { opacity: 0; }
+  to { opacity: 1; transform: none; }
+}
+
 .fade-up {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
+  animation: backup-show 0.5s forwards;
+  animation-delay: 3s; /* Даем скрипту 3 секунды на работу */
+}
+
+/* Но если скрипт сработал быстро, отменяем резервную анимацию */
+.fade-up.visible {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -718,12 +729,19 @@
   navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => toggleMenu(true)); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && navLinks.classList.contains('open')) toggleMenu(true); });
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
-    });
-  }, { rootMargin: '0px', threshold: 0.12 });
-
+ const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    // Добавили проверку: если элемент уже виден или скрипт сработал
+    if (entry.isIntersecting || entry.intersectionRatio > 0) { 
+      entry.target.classList.add('visible'); 
+      obs.unobserve(entry.target); 
+    }
+  });
+}, { 
+  root: null, // следить относительно окна браузера
+  rootMargin: '50px', // сработать за 50px до того, как пользователь доскроллит
+  threshold: 0.01 // сработать, даже если появился всего 1% элемента
+});
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
