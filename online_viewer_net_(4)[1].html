@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="An analysis of whether foreign aid truly helps developing nations or creates permanent dependency.">
+<meta name="theme-color" content="#0d7377">
+
+<meta property="og:title" content="Does Foreign Aid Help or Hurt Poor People? — Global Voice Insights">
+<meta property="og:description" content="While foreign aid has the potential to provide life-saving relief, it only truly helps when paired with strict transparency and long-term strategies.">
+<meta property="og:image" content="ПУТЬ_К_ФОТО_ЗДЕСЬ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="СТРАНИЦА">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Does Foreign Aid Help or Hurt Poor People? — Global Voice Insights">
+<meta name="twitter:description" content="While foreign aid has the potential to provide life-saving relief, it only truly helps when paired with strict transparency and long-term strategies.">
+<meta name="twitter:image" content="ПУТЬ_К_ФОТО_ЗДЕСЬ">
+
+<link rel="icon" type="image/png" href="ПУТЬ_К_ЛОГО">
+
+<title>Does Foreign Aid Help or Hurt Poor People? — Global Voice Insights</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ═══════════════════════════════════════════
+     DESIGN TOKENS — identical to main site
+  ═══════════════════════════════════════════ */
+  :root {
+    --teal: #0d7377;
+    --teal-light: #14a085;
+    --teal-pale: #e8f5f4;
+    --teal-mid: #1a9e96;
+    --green-deep: #0b4f4e;
+    --white: #fafafa;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e4;
+    --gray-300: #b0b0a8;
+    --gray-500: #6b6b62;
+    --gray-700: #3d3d38;
+    --gray-900: #1a1a17;
+    --accent: #c9a84c;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--gray-900);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  nav.scrolled {
+    box-shadow: 0 4px 30px rgba(13,115,119,0.08);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 1rem 4rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+    color: var(--teal); text-decoration: none; letter-spacing: -0.01em;
+    position: relative; z-index: 101;
+  }
+  .nav-logo img.logo-img {
+    height: 35px; width: auto; display: block; object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--gray-700);
+    text-decoration: none; transition: color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -4px; left: 0; background-color: var(--teal);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-links a.active { color: var(--teal); }
+  .nav-links a.active::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--teal); color: white !important;
+    padding: 0.6rem 1.6rem; border-radius: 4px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(13,115,119,0.2);
+  }
+  .nav-cta:hover {
+    background: var(--green-deep) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13,115,119,0.3);
+  }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 6px; cursor: pointer;
+    padding: 4px; z-index: 101;
+  }
+  .hamburger span {
+    display: block; width: 28px; height: 2px; background: var(--gray-700);
+    transition: all 0.3s ease; border-radius: 2px;
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--teal); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--teal); }
+
+  /* ─── SHARED UTILITIES ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .btn-primary, .btn-outline {
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block; letter-spacing: 0.02em;
+  }
+  .btn-primary {
+    background: var(--teal); color: white; border: none;
+    box-shadow: 0 4px 15px rgba(13,115,119,0.25);
+  }
+  .btn-primary:hover {
+    background: var(--green-deep); transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13,115,119,0.35);
+  }
+  .btn-outline {
+    background: transparent; color: var(--teal); border: 2px solid var(--teal);
+  }
+  .btn-outline:hover {
+    background: var(--teal); color: white; transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13,115,119,0.2);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ═══════════════════════════════════════════
+     ARTICLE HERO BANNER
+  ═══════════════════════════════════════════ */
+  .article-hero {
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--gray-50);
+  }
+
+  .article-hero::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--gray-100) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+
+  .article-hero::after {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(13,115,119,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(20,160,133,0.05) 0%, transparent 60%);
+  }
+
+  .article-hero-inner {
+    position: relative; z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 4rem 4rem;
+  }
+
+  .article-breadcrumb {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
+    text-decoration: none; margin-bottom: 2.5rem;
+    transition: gap 0.2s ease;
+  }
+  .article-breadcrumb:hover { gap: 0.8rem; }
+  .article-breadcrumb svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+  .article-category {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .article-category::before {
+    content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal);
+  }
+
+  .article-headline {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 900; line-height: 1.08; letter-spacing: -0.02em;
+    color: var(--gray-900); margin-bottom: 1.8rem;
+  }
+  .article-headline em { font-style: italic; color: var(--teal); }
+
+  .article-deck {
+    font-size: 1.15rem; line-height: 1.7; color: var(--gray-500);
+    font-weight: 400; max-width: 640px; margin-bottom: 2.5rem;
+  }
+
+  .article-meta {
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    padding-top: 2rem; border-top: 1px solid var(--gray-100);
+  }
+  .article-meta-author {
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--teal-pale);
+    background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    color: var(--teal); flex-shrink: 0; overflow: hidden;
+  }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  
+  .author-name { font-weight: 600; font-size: 0.95rem; color: var(--gray-700); }
+  .author-role { font-size: 0.78rem; color: var(--gray-300); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
+  .meta-divider { width: 1px; height: 32px; background: var(--gray-100); }
+  .meta-item {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-500);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════
+     COVER PHOTO AREA
+  ═══════════════════════════════════════════ */
+  .article-cover-wrap {
+    max-width: 860px;
+    margin: 0 auto 0;
+    padding: 0 4rem;
+    position: relative; z-index: 2;
+  }
+
+  .article-cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--gray-100);
+    box-shadow: 0 20px 60px rgba(13,115,119,0.12);
+    position: relative;
+  }
+
+  .article-cover img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  .cover-caption {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300);
+    letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center;
+  }
+
+  /* ═══════════════════════════════════════════
+     ARTICLE BODY
+  ═══════════════════════════════════════════ */
+  .article-body-wrap {
+    padding: 5rem 0 8rem;
+  }
+
+  .article-layout {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .article-prose { min-width: 0; }
+  .article-prose p {
+    font-size: 1.08rem; line-height: 1.85;
+    color: var(--gray-700); font-weight: 400;
+    margin-bottom: 1.8rem;
+  }
+  .article-prose h2 {
+    font-family: var(--font-display); font-size: 1.9rem; font-weight: 700;
+    color: var(--gray-900); line-height: 1.2; letter-spacing: -0.02em;
+    margin: 3rem 0 1.2rem;
+  }
+  .article-prose h2 em { font-style: italic; color: var(--teal); }
+  .article-prose h3 {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+    color: var(--gray-900); margin: 2.5rem 0 1rem;
+  }
+  .article-prose strong { color: var(--teal); font-weight: 600; }
+  .article-prose a {
+    color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,115,119,0.3);
+    text-underline-offset: 3px; transition: text-decoration-color 0.2s;
+  }
+  .article-prose a:hover { text-decoration-color: var(--teal); }
+
+  .pull-quote {
+    border-left: 4px solid var(--teal);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    background: var(--teal-pale);
+    border-radius: 0 8px 8px 0;
+  }
+  .pull-quote p {
+    font-family: var(--font-display); font-size: 1.25rem !important;
+    font-style: italic; color: var(--teal) !important;
+    line-height: 1.6 !important; margin: 0 !important;
+  }
+
+  .article-prose figure { margin: 2.5rem 0; }
+  .article-prose figure img {
+    width: 100%; border-radius: 8px; display: block;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .article-prose figure figcaption {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-300);
+    letter-spacing: 0.06em; margin-top: 0.7rem; text-align: center;
+  }
+
+  .article-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--gray-100);
+  }
+  .article-tag {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); background: var(--teal-pale);
+    border: 1px solid rgba(13,115,119,0.2);
+    padding: 0.4rem 0.9rem; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .article-sidebar { position: sticky; top: 110px; }
+  .sidebar-block {
+    background: var(--gray-50); border: 1px solid var(--gray-100);
+    border-radius: 8px; padding: 1.8rem; margin-bottom: 1.5rem;
+  }
+  .sidebar-label {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .sidebar-label::before {
+    content: ''; display: inline-block; width: 16px; height: 2px; background: var(--teal);
+  }
+
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.7rem; }
+  .toc-list a {
+    font-size: 0.875rem; color: var(--gray-500); text-decoration: none;
+    line-height: 1.4; transition: color 0.2s;
+    display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+  .toc-list a::before { content: '–'; color: var(--gray-300); flex-shrink: 0; margin-top: 1px; }
+  .toc-list a:hover { color: var(--teal); }
+
+  .related-item {
+    display: flex; gap: 0.8rem; text-decoration: none; margin-bottom: 1rem;
+    padding-bottom: 1rem; border-bottom: 1px solid var(--gray-100);
+  }
+  .related-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .related-item-title {
+    font-family: var(--font-display); font-size: 0.9rem; font-weight: 700;
+    color: var(--gray-900); line-height: 1.4; transition: color 0.2s;
+  }
+  .related-item:hover .related-item-title { color: var(--teal); }
+  .related-item-cat {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--gray-300);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     FOOTER 
+  ═══════════════════════════════════════════ */
+  .footer-section { background: var(--green-deep); padding: 6rem 0 0; }
+  .footer-cta-wrap {
+    text-align: center; padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-cta-eyebrow {
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;
+    color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .footer-cta-title {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900; color: white; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem;
+  }
+  .footer-cta-title em { font-style: italic; color: var(--teal-light); }
+  .footer-cta-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 540px;
+    margin: 0 auto 3rem; line-height: 1.7; font-weight: 400;
+  }
+  .footer-contact {
+    display: flex; align-items: center; justify-content: center; gap: 2.5rem;
+    flex-wrap: wrap; margin-top: 3rem;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem;
+    font-weight: 500; transition: color 0.3s ease;
+  }
+  .contact-item:hover { color: white; }
+  .contact-item svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 2rem 0; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.6); }
+  .footer-bottom-links { display: flex; gap: 2.5rem; }
+  .footer-bottom-links a {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 500;
+    text-decoration: none; transition: color 0.3s ease;
+  }
+  .footer-bottom-links a:hover { color: white; }
+  .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-weight: 400; }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    nav.scrolled { padding: 1rem 2rem; }
+    .nav-links {
+      position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 320px;
+      background: var(--white); flex-direction: column; justify-content: center;
+      padding: 3rem; gap: 2.5rem;
+      transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      box-shadow: -10px 0 40px rgba(13,115,119,0.1); z-index: 100;
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 1.2rem; }
+    .nav-links a:not(.nav-cta)::after { display: none; }
+    .hamburger { display: flex; }
+    .article-hero-inner { padding: 4rem 2rem 3rem; }
+    .article-cover-wrap { padding: 0 2rem; }
+    .article-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; }
+    .article-sidebar { position: static; }
+    .container { padding: 0 2rem; }
+    .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
+    .footer-bottom-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.5rem; }
+    .article-hero-inner { padding: 3.5rem 1.5rem 2.5rem; }
+    .article-cover-wrap { padding: 0 1.5rem; }
+    .article-layout { padding: 0 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    .article-headline { font-size: 2.2rem; }
+    .btn-primary, .btn-outline { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="СТРАНИЦА" class="nav-logo">
+    <img src="ПУТЬ_К_ЛОГО" alt="Logo" class="logo-img">
+    Global Voice Insights
+  </a>
+
+  <div class="nav-overlay" id="nav-overlay"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:99; transition:opacity 0.3s; opacity:0;">
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="СТРАНИЦА">Home</a></li>
+    <li><a href="СТРАНИЦА#about">Why GVI</a></li>
+    <li><a href="СТРАНИЦА#hub">Digest</a></li>
+    <li><a href="СТРАНИЦА#team">Team</a></li>
+    <li><a href="СТРАНИЦА#careers">Join Us</a></li>
+    <li><a href="СТРАНИЦА#contact" class="nav-cta">Contact</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <a href="СТРАНИЦА#hub" class="article-breadcrumb fade-up">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Digest
+    </a>
+
+    <div class="article-category fade-up">Analysis</div>
+
+    <h1 class="article-headline fade-up" style="transition-delay:0.1s;">
+      Does Foreign Aid <em>Help or Hurt</em> Poor People?
+    </h1>
+
+    <p class="article-deck fade-up" style="transition-delay:0.2s;">
+      While foreign aid has the potential to provide life-saving relief, it only truly helps when paired with strict transparency measures and long-term strategies that prioritize local economic independence over permanent dependency.
+    </p>
+
+    <div class="article-meta fade-up" style="transition-delay:0.3s;">
+      <div class="article-meta-author">
+        <div class="author-avatar">
+          <img src="ПУТЬ_К_ФОТО_ЗДЕСЬ" alt="Nicole T. Ramanand">
+        </div>
+        <div>
+          <div class="author-name">Nicole T. Ramanand</div>
+          <div class="author-role">Lead Writer · GVI</div>
+        </div>
+      </div>
+
+      <div class="meta-divider"></div>
+      <div class="meta-item">19 April 2026</div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">5 min read</div>
+    </div>
+  </div>
+</header>
+
+<div class="article-cover-wrap fade-up">
+  <div class="article-cover">
+    <img src="ПУТЬ_К_ФОТО_ЗДЕСЬ" alt="Humanitarian aid distribution cover photo">
+  </div>
+  <p class="cover-caption">Photo: Aid distribution · Source: ПУТЬ_К_ИСТОЧНИКУ</p>
+</div>
+
+<main>
+  <div class="article-body-wrap">
+    <div class="article-layout">
+
+      <article class="article-prose fade-up">
+
+        <p>
+          Britannica's definition of 'foreign aid' is "The international transfer of capital, goods, or services from a country or international organization for the benefit of the recipient country or its population." Critics argue that foreign aid is the modern way for wealthy nations to control the economies and policies of former colonies. 
+        </p>
+
+        <p>
+          Foreign aid forces countries to wonder about the underlying motives behind the help offered, the real world impact, and the ethical balance between donors and recipients. Will the money reach those in need? Is this act truly about helping or about influence? Is this creating long-term strength or permanent dependency? Many argue that aid is a moral obligation based on human equality, but what about being fair? 
+        </p>
+
+        <p>
+          Others wonder if it is morally flawed, countries only providing for underdeveloped countries for their own benefit. Aid is a powerful tool for good, but only if it is managed correctly and avoids creating a cycle of reliance. While foreign aid has the potential to provide life-saving relief and essential infrastructure, it only truly helps the poor when it is paired with strict transparency measures and long term strategies that prioritize local economic independence over permanent dependency.
+        </p>
+
+        <h2 id="section-1">Immediate Relief vs. <em>Long-Term Independence</em></h2>
+
+        <p>
+          To begin, aid is a vital tool for immediate crises (like pandemics, natural disasters, etc.) to provide support towards countries in need. As stated by UNICEF, "Foreign aid increases global stability... boosts the U.S. economy, prevents global disease outbreaks..." Aid has been shown to help build stability, support families and reduce migration costs. Studies have shown that from U.S. aid alone around 2.3-5.6 million lives have been saved. 
+        </p>
+
+        <p>
+          Beyond these numbers, this assistance acts as a strategic "early-warning system," stopping regional health threats before they reach U.S. shores. By addressing the main causes of need—such as famine and disease—aid helps prevent the social collapses that lead to extremism and mass displacement. 
+        </p>
+
+        <p>
+          While aid itself is not inherently "bad," its most visible successes are often immediate humanitarian reliefs rather than the complex, long-term structural reforms needed for a nation's full economic independence. Ultimately, aid serves as a vital first step, buying the time and stability necessary for more permanent, self-sustaining development to take root.
+        </p>
+
+        <figure>
+          <img src="ПУТЬ_К_ФОТО_ЗДЕСЬ" alt="Humanitarian relief efforts">
+          <figcaption>Caption: Immediate humanitarian relief vs. structural reforms. Source: ПУТЬ_К_ИСТОЧНИКУ</figcaption>
+        </figure>
+
+        <h2 id="section-2">The Transparency <em>Imperative</em></h2>
+
+        <p>
+          To build off of that idea, aid is only effective if accompanied by strict transparency measures, as it often fails without rigorous oversight. Large inflows of non-tax revenue can unintentionally fuel corruption and "rent seeking" among local elites, who may divert funds for personal gain, rather than public good. 
+        </p>
+
+        <div class="pull-quote">
+          <p>"An original and classic example of this occurred in Uganda during the early 1990s when a Public Expenditure Tracking Survey revealed that only about 13% of government education grants actually reached schools."</p>
+        </div>
+
+        <p>
+          In response, the government launched a nationwide newspaper campaign to publish exactly when and how much money was sent to each district. This transparency was shown to empower parents and head teachers to hold local officials accountable, causing the share of funds reaching schools to skyrocket to over 80% by 2001. Ultimately, aid only truly helps the poor when it includes mechanisms like independent audits or biometric tracking to ensure that life-saving resources are not transferred off by corrupt officials.
+        </p>
+
+        <h2 id="section-3">Breaking the <em>Dependency Trap</em></h2>
+
+        <p>
+          An important area regarding foreign aid is long-term strategies when handling aid. An example of this is the dumping of free or heavily subsidized foreign food, which lowers prices so much that local farmers can not compete, leading to bankruptcy and increased food insecurity. 
+        </p>
+
+        <p>
+          Going beyond market displacement, poorly managed aid creates a "dependency trap" that stifles indigenous innovation and infrastructure. When local governments rely on a steady influx of foreign commodities, they lose the incentive to invest in the rural roads, irrigation systems, and research centers necessary for self-sufficiency. This creates a cycle where the recipient nation becomes a permanent importer of emergency relief rather than a producer of its own wealth. 
+        </p>
+
+        <p>
+          To break this cycle, long-term strategies must prioritize institutional capacity building—training local experts and strengthening regulatory frameworks—rather than just delivering physical goods. For aid to help, it must transition from shipping foreign goods to local procurement or cash vouchers that circulate money back into the local economy.
+        </p>
+
+        <h2 id="section-4">Prioritizing Local <em>Economic Independence</em></h2>
+
+        <p>
+          Lastly, prioritizing local economic independence over permanent dependency is important when handling foreign aid. Long-term aid is known to be able to go from being 'helpful' to becoming a drug (or a crutch) which allows countries to neglect changes needed in their country. 
+        </p>
+
+        <p>
+          When countries take advantage of aid, as mentioned before, they won't do themselves any favors—instead, they'll rely on the other country to provide for them. Countries would only get like this due to poor governance—also known as neglectful leaders. <strong>Helpful aid should act like a jump-start for a car</strong>—just a little something to get things moving, but it is designed to eventually become unnecessary.
+        </p>
+
+        <h2 id="conclusion">Conclusion</h2>
+
+        <p>
+          To conclude, foreign aid acts as a vital humanitarian tool for immediate crises and stability, yet its efficacy hinges on rigorous transparency in order to combat corruption and the implantation of long-term strategies that foster local independence. 
+        </p>
+
+        <p>
+          To prevent creating dependency, aid must prioritize building local institutional capacity over delivering, which can stifle indigenous economic growth. A successful aid strategy focuses as a temporary transparent mechanism for development, not a permanent substitute for domestic growth.
+        </p>
+
+        <div class="article-tags">
+          <span class="article-tag">Economics</span>
+          <span class="article-tag">Global Policy</span>
+          <span class="article-tag">Foreign Aid</span>
+          <span class="article-tag">Analysis</span>
+        </div>
+
+      </article>
+
+      <aside class="article-sidebar fade-up" style="transition-delay:0.15s;">
+
+        <div class="sidebar-block">
+          <div class="sidebar-label">Contents</div>
+          <ul class="toc-list">
+            <li><a href="#section-1">Immediate Relief vs. Independence</a></li>
+            <li><a href="#section-2">The Transparency Imperative</a></li>
+            <li><a href="#section-3">Breaking the Dependency Trap</a></li>
+            <li><a href="#section-4">Local Economic Independence</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sidebar-label">Related</div>
+
+          <a href="СТРАНИЦА" class="related-item">
+            <div>
+              <div class="related-item-title">Soft Power vs. Hard Power: Understanding the Modern Arsenal</div>
+              <div class="related-item-cat">Diplomacy 101</div>
+            </div>
+          </a>
+          <a href="СТРАНИЦА" class="related-item">
+            <div>
+              <div class="related-item-title">The Sahel's Security Vacuum: France Out, Russia In?</div>
+              <div class="related-item-cat">Weekly Review</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align:center; margin-top:0.5rem;">
+          <a href="СТРАНИЦА#careers" class="btn-primary" style="width:100%; display:block; text-align:center;">Join the Team</a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-section" id="contact">
+  <div class="container">
+    <div class="footer-cta-wrap fade-up">
+      <div class="footer-cta-eyebrow">Global Voice Insights</div>
+      <h2 class="footer-cta-title">Don't just watch history happen<br>— <em>help us write it.</em></h2>
+      <p class="footer-cta-sub">
+        Whether you're a reader, a writer, or a designer — there's a place for your voice at GVI. The world is complex. Let's make sense of it together.
+      </p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="СТРАНИЦА#careers" class="btn-primary">Join the Team</a>
+      </div>
+
+      <div class="footer-contact">
+        <a href="mailto:globalvoiceinsights@gmail.com" class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          globalvoiceinsights@gmail.com
+        </a>
+        <a href="https://www.instagram.com/global_voice_insight?igsh=MTNhbndwM2JjbGV2dg==" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          @Global_Voice_Insights
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom fade-up">
+      <div class="footer-logo-text">Global Voice Insights</div>
+      <div class="footer-bottom-links">
+        <a href="СТРАНИЦА">Home</a>
+        <a href="СТРАНИЦА#about">About</a>
+        <a href="СТРАНИЦА#hub">Digest</a>
+        <a href="СТРАНИЦА#team">Team</a>
+        <a href="СТРАНИЦА#careers">Join Us</a>
+      </div>
+      <div class="footer-copy">© 2026 Global Voice Insights. Youth-Led. Globally Minded.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ─── Scroll-shrink nav ─── */
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  /* ─── Mobile hamburger ─── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  const overlay   = document.getElementById('nav-overlay');
+
+  function toggleMenu(forceClose) {
+    const isOpen    = navLinks.classList.contains('open');
+    const shouldClose = forceClose === true || isOpen;
+    if (shouldClose) {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 300);
+    } else {
+      navLinks.classList.add('open');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      overlay.style.display = 'block';
+      setTimeout(() => overlay.style.opacity = '1', 10);
+    }
+  }
+
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-controls', 'nav-links');
+  hamburger.addEventListener('click', () => toggleMenu());
+  overlay.addEventListener('click', () => toggleMenu(true));
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(true));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) toggleMenu(true);
+  });
+
+  /* ─── Scroll-reveal animations ─── */
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px', threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
